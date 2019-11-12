@@ -7,8 +7,8 @@ class Api::SessionsController < ApplicationController
       params[:user][:password]
     )
 
-    if user.nil?
-      render json: ["password and/or username does not exist"], status: 422
+    if @user.nil?
+      render json: ["password and/or username incorrect/invalid"], status: 422
     else
       login_user!(@user)
       render '/api/users/show'
@@ -16,8 +16,13 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
-    logout_user!
-    redirect_to new_session_url
+    @user = current_user
+    if @user
+      logout_user!
+      render "/"
+    else
+      render json: ["Nobody signed in"], status: 404
+    end
   end
 
   def new
