@@ -2,17 +2,16 @@ class SessionsController < ApplicationController
   before_action :require_no_user!, only: %i(create new)
 
   def create
-    user = User.find_by_credentials(
+    @user = User.find_by_credentials(
       params[:user][:email],
       params[:user][:password]
     )
 
     if user.nil?
-      flash.now[:errors] = ["Incorrect username and/or password"]
-      render :new
+      render json: ["password and/or username does not exist"], status: 422
     else
-      login_user!(user)
-      redirect_to '/'
+      login_user!(@user)
+      render '/api/users/show'
     end
   end
 
