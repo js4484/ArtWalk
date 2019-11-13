@@ -226,9 +226,15 @@
    flex-direction: column
 }
 
-.header-button {
+.session-submit {
     background-color: #d1410c;
     color: #ffffff;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 30px 1px;
+    border: 2px solid;
+    border-radius: 4px;
 }
 
  .login-input {
