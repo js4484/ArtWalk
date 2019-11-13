@@ -5,7 +5,11 @@ class SessionForm extends React.Component {
         super(props);
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            first_name: '',
+            last_name: '',
+            activeForm: 'greetingForm'
+
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -18,8 +22,15 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+
+        if (this.state.activeForm === "greetingForm") {
+            // logic for login/signup
+            this.setState({ activeForm: "nextForm" })
+        } else {
+            const user = Object.assign({}, this.state);
+            this.props.processForm(user);
+        }
+
     }
 
     renderErrors() {
@@ -42,32 +53,47 @@ class SessionForm extends React.Component {
                         <div>Let's get Started</div>
                         <div>Use Facebook or email to get started.</div>
                     </div>
-          <br />
+                    {this.renderErrors()}
+                    <div className="login-form">
+                        <br />
+                        <label>Email:
+                            <input type="text" value={this.state.email} onChange={this.update('email')} className="login-input" />
+                        </label>
+                        <br />
+                        <input className="session-submit" type="submit" value="Get Started" />
+                        <p>or</p>
+                        <input className="session-submit" type="submit" value="Continue With Facebook" />
+                        <p className="disclaimer">By continuing, I accept the Eventbrite terms of service, community guidelines and have read the privacy policy.</p>
+                    </div>
+                </form>
+            </div>
+
+        );
+
+
+        const loginForm = (
+            <div className="login-form-container">
+                <form onSubmit={this.handleSubmit} className="login-form-box">
+                    <div class="greeting-with-img">
+                        <div>Welcome back</div>
+                        <div>Please enter your password to log in.</div>
+                    </div>
+                 <br />
                     Please {this.props.formType} or {this.props.navLink}
                     {this.renderErrors()}
                     <div className="login-form">
                         <br />
                         <label>Email:
-              <input type="text"
-                                value={this.state.email}
-                                onChange={this.update('email')}
-                                className="login-input"
-                            />
+                            <input type="text" value={this.state.email} onChange={this.update('email')} className="login-input"/>
                         </label>
                         <br />
                         <label>Password:
-              <input type="password"
-                                value={this.state.password}
-                                onChange={this.update('password')}
-                                className="login-input"
-                            />
+                            <input type="password" value={this.state.password} onChange={this.update('password')} className="login-input"/>
                         </label>
                         <br />
-                        
                         <input className="session-submit" type="submit" value="Get Started" />
                     </div>
                 </form>
-                
             </div>
         );
     }
