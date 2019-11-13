@@ -8,9 +8,9 @@ class Api::SessionsController < ApplicationController
     )
 
     if @user.nil?
-      render json: ["password and/or username incorrect/invalid"], status: 422
+      render json: ["password and/or email incorrect/invalid"], status: 422
     else
-      login_user!(@user)
+      login(@user)
       render '/api/users/show'
     end
   end
@@ -18,8 +18,8 @@ class Api::SessionsController < ApplicationController
   def destroy
     @user = current_user
     if @user
-      logout_user!
-      render "/"
+      logout
+      render json: {}
     else
       render json: ["Nobody signed in"], status: 404
     end
