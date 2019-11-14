@@ -15,239 +15,175 @@
  */
 
 
- ::-webkit-scrollbar {
-     width: 12px;
- }
+body {
+  font-family: 'Abel', sans-serif;
+}
 
- ::-webkit-scrollbar-track {
-     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-     border-radius: 10px;
- }
+.content {
+  height: 100%;
+}
 
- ::-webkit-scrollbar-thumb {
-     border-radius: 10px;
-     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
- }
+.map {
+  width: 500px;
+  height: 500px;
+  float: left;
+  position: relative;
+}
 
-  body {
-    font-family: 'Abel', sans-serif;
-  }
+header {
+  margin-left: 5%;
+}
 
- .content {
-   height: 100%;
- }
-
- .map {
-   width: 500px;
-   height: 500px;
-   float: left;
-   position: relative;
- }
-
- .reviews {
-   float: left;
- }
-
- .review-form {
-   float: left;
- }
-
- .bench-index-item {
-   border: 1px solid black;
-   width: 100%;
-   margin-bottom: 5px;
-   box-sizing: border-box;
-   display: flex;
-   justify-content: space-between;
- }
-
- .bench-index-item img {
-   height: 200px;
-   max-width: 130px;
- }
-
- .user-pane {
-   display: flex;
-   justify-content: center;
- }
-
- .right-half {
-   width: 400px;
-   margin-left: 50px;
-   margin-top: 40px;
-   height: 480px;
-   overflow-y: scroll;
-   padding: 0 20px 20px 20px;
- }
-
- .right-half.bench-details {
-   display: flex;
-   flex-direction: column;
-   margin-top: 20px;
- }
-
- .index-item-info {
-   margin: 10px 10px 10px 10px;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
- }
-
- .index-item-category {
-   font-weight: bold;
- }
-
- .index-item-copy {
-   margin-left: 15px;
- }
-
- header {
-   margin-left: 5%;
- }
-
- h1, h5 {
-   margin-bottom: 0px;
- }
-
- .single-bench-show {
-   display: flex;
-   justify-content: center;
-   margin-top: 20px;
- }
-
- .single-bench-map {
-   display: flex;
-   flex-direction: column;
- }
-
- .bench-list {
-   padding-left: 0;
-   list-style-position: inside;
-   margin-top: 0;
- }
+h1, h5 {
+  margin-bottom: 0px;
+}
 .nav-header {
-    display: flex;
-    justify-content: space-between;
-    height: 59px;
-   
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 59px;
+  
+  align-items: center;
 }
 
 .nav-header-container {
-     border-bottom: 1px solid #eeedf2;
+  border-bottom: 1px solid #eeedf2;
 }
 
- .index-image {
-   max-height: 200px;
-   max-width: 100px;
- }
+.index-image {
+  max-height: 200px;
+  max-width: 100px;
+}
 
- .review-button, .review-form {
-   width: 100px;
-   margin-top: 20px;
- }
-
- .review-button {
-   /* padding-top: 1px; */
- }
-
- .header-name {
-   margin: 7px 0 0 0;
-
- }
-
- .header-favorites {
-   margin: 4px 0 4px 0;
-   font-size: 14px;
- }
-
- .new-bench-container {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   margin-top: 50px;
- }
-
- .new-bench-form {
-   display: flex;
-   flex-direction: column;
-   width: 300px;
-   outline: black 1px solid;
-   padding: 5px 30px 10px 30px;
- }
-
- .new-bench-title {
-   text-align: center;
- }
-
- .new-bench-button {
-   margin: 5px;
- }
-
- input.bench-field {
-   margin: 10px;
-   padding: 2px;
- }
-
- label.bench-field {
-   width: 125px;
-   display: inline-block;
- }
-
- .button-holder {
-   display: flex;
-   align-items: center;
-   flex-direction: column;
- }
-
- input.new-bench-button {
-   width: 160px;
-   margin-top: 10px;
- }
-
- button.new-bench-button {
-   width: 160px;
- }
-
- .login-form-container {
-   display: flex;
-   justify-content: center;
-   margin-top: 100px;
- }
+.login-form-container {
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+}
 
  .login-form {
    display: flex;
-   justify-content: center;
+   align-items: center;
    flex-direction: column;
+   width: 100%;
  }
+
+.login-form-box {
+  padding: 20px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+
 .greeting-with-img {
-    display: flex;
-   justify-content: center;
-   flex-direction: column
+  display: flex;
+  align-items: center;
+  flex-direction: column
+}
+
+.lgs {
+  font-family: sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.after-lgs {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #6f7287;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 36px;
+  background-color: transparent;
+  padding: 5px;
+  border-radius: 2px;
+  border: 1px solid #dbdae3;
+  font-family: sans-serif;
+  color: rgb(111, 114, 135);
+  margin-bottom: 20px;
+}
+
+.ib:hover {
+    border: 1px solid gray;
+}
+
+.ib:focus-within {
+  border: 1px solid blue;
+}
+
+.input-box input[type="text"] {
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  height: 24px;
+  font-size: 14px;
+}
+
+.input-box input[type="text"]:focus {
+  border: none;
+}
+
+
+.input-box input[type="password"] {
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  height: 24px;
+  font-size: 14px;
+}
+
+.input-text {
+  font-size: 12px;
 }
 
 .session-submit {
-    background-color: #d1410c;
-    color: #ffffff;
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0 30px 1px;
-    border: 2px solid;
-    border-radius: 4px;
+  background-color: #d1410c;
+  color: #ffffff;
+  display: block;
+  box-sizing: border-box;
+  width: 332px;
+  padding: 0 30px 1px;
+  border: 2px solid;
+  border-radius: 4px;
+  padding: 6px;
+  height: 44px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.session-submit:hover {
+    filter: brightness(110%);
+}
+
+.fp {
+  color: #3659e3;
+  text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+
+.demo-submit {
+  background-color: #4267b2;
+  color: #ffffff;
+  display: block;
+  box-sizing: border-box;
+  width: 332px;
+  padding: 0 30px 1px;
+  border: 2px solid;
+  border-radius: 4px;
+  padding: 6px;
+  height: 44px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
  .login-input {
    margin-left: 20px;
- }
-
- .login-form-box {
-   outline: 1px solid black;
-   padding: 20px;
- }
-
- .filter {
-   font-weight: bold;
  }
 
  .header-link {
@@ -262,6 +198,3 @@
  .session-submit {
    text-transform: capitalize;
  }
-.corner-logo {
-
-}

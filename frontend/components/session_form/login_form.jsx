@@ -41,22 +41,24 @@ class LoginForm extends React.Component {
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div className="greeting-with-img">
-                        <div>Let's get Started</div>
-                        <div>Use your email, or our demo user, to log in.</div>
+                        <div className="lgs">Let's get Started</div>
+                        <div className="after-lgs">Use your email, or our demo user, to log in.</div>
                     </div>
                     {this.renderErrors()}
                     <div className="login-form">
-                        <br />
-                        <label>Email:
-                            <input type="text" value={this.state.email} className="login-input" onChange={this.update("email")} />
-                        </label>
-                        <br />
-                        <label>Password:
-                            <input type="password" value={this.state.password} onChange={this.update('password')} className="login-input" />
-                        </label>
-                        <br />
+                        <div className="input-box ib">
+                            <label htmlFor="input-email"><span className="input-text">Email:</span></label>
+                            <input id="input-email" type="text" value={this.state.email} className="login-input" onChange={this.update("email")} />
+                        </div>
+                        <div className="input-box ib">
+                            <label htmlFor="input-password"><span className="input-text">Password:</span></label>
+                            <input id="input-password" type="password" value={this.state.password} className="login-input" onChange={this.update("password")} />
+                        </div>
+
                         <input className="session-submit" type="submit" value="Log In" />
-                        <a href="#">Forgot password</a>
+                        <a className="fp" href="#">Forgot password</a>
+                        <p>or</p>
+                        <input className="demo-submit" type="submit" value="Log In As Demo User" />
                     </div>
                 </form>
             </div>
