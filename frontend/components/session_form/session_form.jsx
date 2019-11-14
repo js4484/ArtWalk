@@ -45,33 +45,35 @@ class SessionForm extends React.Component {
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div className="greeting-with-img">
-                        <div>Welcome</div>
-                        <div>Create an account.</div>
+                        <div className="lgs">Welcome</div>
+                        <div className="after-lgs">Create an account.</div>
                     </div>
                     {this.renderErrors()}
                     <div className="login-form">
-                        <br />
-                        <label>Email:
-                            <input type="text" value={this.state.email} className="login-input" onChange={this.update('email')}/>
-                        </label>
-                        <br />
-                        <div className="signup-names">
-                            <label>First Name:
-                            <input type="text" value={this.state.first_name} onChange={this.update('first_name')} className="login-input" />
-                            </label>
-                            <label>Last Name:
-                            <input type="text" value={this.state.last_name} onChange={this.update('last_name')} className="login-input" />
-                            </label>
+                        <div className="input-box ib">
+                            <label htmlFor="input-email"><span className="input-text">Email:</span></label>
+                            <input id="input-email" type="text" value={this.state.email} className="login-input" onChange={this.update("email")} />
                         </div>
-                        <br />
-                        <label>Password:
-                            <input type="password" value={this.state.password} onChange={this.update('password')} className="login-input" />
-                        </label>
+                        <div className="signup-names">
+                            <div className="input-names">
+                                <label htmlFor="input-first-name"><span className="input-text">First Name:</span></label>
+                                <input id="input-first-name" type="text" value={this.state.first_name} className="login-input" onChange={this.update("first_name")} />
+                            </div>
+                            <div className="input-names">
+                                <label htmlFor="input-last-name"><span className="input-text">Last Name:</span></label>
+                                <input id="input-last-name" type="text" value={this.state.last_name} className="login-input" onChange={this.update("last_name")} />
+                            </div>
+                        </div>
+
+                        <div className="input-box ib">
+                            <label htmlFor="input-password"><span className="input-text">Password:</span></label>
+                            <input id="input-password" type="password" value={this.state.password} className="login-input" onChange={this.update("password")} />
+                        </div>
                         <input className="session-submit" type="submit" value="Sign Up" />
                         <div className="password-strength">
-                            <p>Your password must be at least 6 characters</p>
+                            <p className="after-lgs">Your password must be at least 6 characters</p>
                         </div>
-                        <a href="#">Log In Instead</a>
+                        <a className="fp" href="#">Log In Instead</a>
                     </div>
                 </form>
             </div>
