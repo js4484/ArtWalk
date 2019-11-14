@@ -2,12 +2,12 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 
-import AppToo from './app_too';
+import App from './app';
 
 const Root = ({ store }) => (
     <Provider store={store}>
         <HashRouter>
-            <AppToo store={store}/>
+            <App store={store}/>
         </HashRouter>
     </Provider>
 );
