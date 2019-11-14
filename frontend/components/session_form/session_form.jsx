@@ -11,7 +11,6 @@ class SessionForm extends React.Component {
             last_name: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.checkEmail = this.checkEmail.bind(this);
     }
 
 
@@ -53,20 +52,20 @@ class SessionForm extends React.Component {
                     <div className="login-form">
                         <br />
                         <label>Email:
-                            <input type="text" value="" className="login-input" onChange={this.update('email')}/>
+                            <input type="text" value={this.state.email} className="login-input" onChange={this.update('email')}/>
                         </label>
                         <br />
                         <div className="signup-names">
                             <label>First Name:
-                            <input type="text" value="" onChange={this.update('first_name')} className="login-input" />
+                            <input type="text" value={this.state.first_name} onChange={this.update('first_name')} className="login-input" />
                             </label>
                             <label>Last Name:
-                            <input type="text" value="" onChange={this.update('last_name')} className="login-input" />
+                            <input type="text" value={this.state.last_name} onChange={this.update('last_name')} className="login-input" />
                             </label>
                         </div>
                         <br />
                         <label>Password:
-                            <input type="password" value="" onChange={this.update('password')} className="login-input" />
+                            <input type="password" value={this.state.password} onChange={this.update('password')} className="login-input" />
                         </label>
                         <input className="session-submit" type="submit" value="Sign Up" />
                         <div className="password-strength">
