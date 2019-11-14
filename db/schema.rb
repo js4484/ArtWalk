@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_14_214434) do
+ActiveRecord::Schema.define(version: 2019_11_12_223107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2019_11_14_214434) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.json "favorite_tags"
     t.string "first_name"
     t.string "last_name"
     t.string "billing"
@@ -38,8 +37,6 @@ ActiveRecord::Schema.define(version: 2019_11_14_214434) do
     t.boolean "email_pref_1", default: false
     t.boolean "email_pref_2", default: false
     t.boolean "email_pref_3", default: false
-    t.json "payment_methods"
-    t.json "linked_accts"
   end
 
 end
