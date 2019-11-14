@@ -85,6 +85,7 @@ h1, h5 {
   font-family: sans-serif;
   font-size: 24px;
   font-weight: 700;
+  margin-bottom: 8px;
 }
 
 .after-lgs {
@@ -124,7 +125,7 @@ h1, h5 {
 }
 
 .input-box input[type="text"]:focus {
-  border: none;
+  outline: 0;
 }
 
 
@@ -134,6 +135,10 @@ h1, h5 {
   background-color: transparent;
   height: 24px;
   font-size: 14px;
+}
+
+.input-box input[type="password"]:focus {
+  outline: 0;
 }
 
 .input-text {
@@ -162,8 +167,18 @@ h1, h5 {
 .fp {
   color: #3659e3;
   text-decoration: none;
-    font-family: sans-serif;
-    font-size: 14px;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+.fp:hover {
+  text-decoration: #3659e3 underline;
+}
+
+.or {
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #39364f;
 }
 
 

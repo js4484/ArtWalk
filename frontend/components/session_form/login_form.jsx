@@ -9,12 +9,20 @@ class LoginForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleDemoUser = this.handleDemoUser.bind(this);
   }
 
     update(field) {
         return e => this.setState({
             [field]: e.target.value
         })
+    }
+
+
+    handleDemoUser(e) {
+        e.preventDefault();
+        const user = {email: "demo@user.com", password: "DemoUser"};
+        this.props.processForm(user);
     }
 
     handleSubmit(e) {
@@ -57,8 +65,8 @@ class LoginForm extends React.Component {
 
                         <input className="session-submit" type="submit" value="Log In" />
                         <a className="fp" href="#">Forgot password</a>
-                        <p>or</p>
-                        <input className="demo-submit" type="submit" value="Log In As Demo User" />
+                        <p className="or" >or</p>
+                        <input className="demo-submit" type="submit" value="Log In As Demo User" onClick={this.handleDemoUser}/>
                     </div>
                 </form>
             </div>
