@@ -14,10 +14,7 @@ class SessionForm extends React.Component {
         this.checkEmail = this.checkEmail.bind(this);
     }
 
-    checkEmail(e) {
-        // debugger;
-        console.log(e.target.value === this.state.email)
-    }
+
 
     update(field) {
         return e => this.setState({

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 
 const Greeting = ({ currentUser, logout, pathname }) => {
-    // debugger;
     const sessionLinks = () => {
         if (pathname === "/login") {
             return (<nav className="login-signup">
