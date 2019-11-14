@@ -1,5 +1,5 @@
 {
-  "name": "ArtWalk",
+  "name": "art-walk",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.7.2",
