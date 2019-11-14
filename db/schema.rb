@@ -10,33 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_12_223107) do
+ActiveRecord::Schema.define(version: 2019_11_14_221821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
-    t.string "photo"
-    t.string "shipping_city"
-    t.string "shipping_state"
-    t.string "shipping_zip"
-    t.string "shipping_country"
-    t.text "description"
-    t.string "password_digest", null: false
-    t.string "session_token", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.string "photo"
     t.string "billing"
     t.string "city"
     t.string "state"
     t.string "zipcode"
     t.string "country"
+    t.string "shipping_city"
+    t.string "shipping_state"
+    t.string "shipping_zip"
+    t.string "shipping_country"
+    t.json "payment_methods"
+    t.json "favorite_tags"
+    t.json "linked_accts"
     t.boolean "email_pref_1", default: false
     t.boolean "email_pref_2", default: false
     t.boolean "email_pref_3", default: false
+    t.text "description"
+    t.string "password_digest", null: false
+    t.string "session_token", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
