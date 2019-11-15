@@ -286,3 +286,27 @@ h1, h5 {
   font-size: 14px;
   color: rgb(216, 51, 51);
 }
+
+.login-signup {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  line-height: 4;
+}
+
+.login-signup a {
+  font-size: 14px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #6f7287;
+  padding: 0 10px 0 10px;
+}
+
+.nav-link {
+  height: 100%;
+
+}
+
+.login-signup a:hover {
+  color: black;
+}

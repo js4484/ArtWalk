@@ -7,18 +7,17 @@ const Greeting = ({ currentUser, logout, pathname }) => {
     const sessionLinks = () => {
         if (pathname === "/login") {
             return (<nav className="login-signup">
-                <Link to="/signup">Sign up!</Link>
+                <Link to="/signup"><div className="nav-link">Sign up!</div></Link>
             </nav>)
         } else if (pathname === "/signup") {
             return (<nav className="login-signup">
-                <Link to="/login">Login</Link>
+                <Link to="/login"><div className="nav-link">Login</div></Link>
             </nav>)
         } else {
             return (
             <nav className="login-signup">
-                <Link to="/login">Login</Link>
-                &nbsp;or&nbsp;
-                <Link to="/signup">Sign up!</Link>
+                    <Link to="/login"><div className="nav-link">Login</div></Link>
+                    <Link to="/signup"><div className="nav-link">Sign up!</div></Link>
             </nav>)
         };
     };
