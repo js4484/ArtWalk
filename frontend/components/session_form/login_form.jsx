@@ -18,14 +18,19 @@ class LoginForm extends React.Component {
         })
     }
 
+    componentDidMount() {
+        this.props.clearErrors();
+    }
 
     handleDemoUser(e) {
+        // debugger;
         e.preventDefault();
         const user = {email: "demo@user.com", password: "DemoUser"};
         this.props.processForm(user);
     }
 
     handleSubmit(e) {
+        
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
@@ -34,9 +39,9 @@ class LoginForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
+            <ul className="error-list">
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li className="error" key={`error-${i}`}>
                         {error}
                     </li>
                 ))}

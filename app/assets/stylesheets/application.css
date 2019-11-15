@@ -267,3 +267,16 @@ h1, h5 {
 .input-names input[type="password"]:focus {
   outline: 0;
 }
+
+.error-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.error {
+  list-style-type: none;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: rgb(216, 51, 51);
+}

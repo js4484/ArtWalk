@@ -13,7 +13,9 @@ class SessionForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-
+    componentDidMount() {
+        this.props.clearErrors();
+    }
 
     update(field) {
         return e => this.setState({
@@ -29,9 +31,9 @@ class SessionForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
+            <ul className="error-list">
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li className="error" key={`error-${i}`}>
                         {error}
                     </li>
                 ))}
@@ -73,7 +75,7 @@ class SessionForm extends React.Component {
                         <div className="password-strength">
                             <p className="after-lgs">Your password must be at least 6 characters</p>
                         </div>
-                        <a className="fp" href="#">Log In Instead</a>
+                        <a className="fp" href="/#/login">Log In Instead</a>
                     </div>
                 </form>
             </div>
