@@ -13,11 +13,12 @@ Ticket.destroy_all
 u1 = User.create(email: 'js@gmail.com', first_name: "jake", last_name: "s", photo: "placeholder_photo", billing: "u1_billing", city: "u1_city", state: "u1_state", zipcode: "u1_zipcode", country: "u1_country", shipping_city: "u1_shipping_city", shipping_state: "u1_shipping_state", shipping_zip: "u1_shipping_zip", shipping_country: "u1_shipping_country", email_pref_1: false, email_pref_2: false, email_pref_3: false, description: "u1_description", payment_methods: {amex: "XXXX"}, favorite_tags: {museum: "museum"}, linked_accts: {fb: "XXXX"}, password: "password")
 demo = User.create(email: 'demo@user.com', first_name: "Demo", last_name: "User", password: "DemoUser")
 
+
 e1 = Event.create(
     event_title: "Ingres-ry women at the Met",
     location: "Metropolitan Museum of Art", 
     meet_up_details: "meet by the fountain directly north of the entrance steps",
-    event_date: "3-14-2020",
+    event_date: DateTime.strptime("09/14/2009 8:00", "%m/%d/%Y %H:%M"),
     start_time: 1000,
     end_time: 1330,
     event_image: "https://images.metmuseum.org/CRDImages/rl/original/DT717.jpg",
