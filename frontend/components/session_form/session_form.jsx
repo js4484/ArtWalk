@@ -58,17 +58,17 @@ class SessionForm extends React.Component {
                         </div>
                         <div className="signup-names">
                             <div className="input-names">
-                                <label htmlFor="input-first-name"><span className="input-text">First Name:</span></label>
+                                <label htmlFor="input-first-name"><div className="input-text">First Name:</div></label>
                                 <input id="input-first-name" type="text" value={this.state.first_name} className="login-input" onChange={this.update("first_name")} />
                             </div>
                             <div className="input-names">
-                                <label htmlFor="input-last-name"><span className="input-text">Last Name:</span></label>
+                                <label htmlFor="input-last-name"><div className="input-text">Last Name:</div></label>
                                 <input id="input-last-name" type="text" value={this.state.last_name} className="login-input" onChange={this.update("last_name")} />
                             </div>
                         </div>
 
                         <div className="input-box ib">
-                            <label htmlFor="input-password"><span className="input-text">Password:</span></label>
+                            <label htmlFor="input-password"><div className="input-text">Password:</div></label>
                             <input id="input-password" type="password" value={this.state.password} className="login-input" onChange={this.update("password")} />
                         </div>
                         <input className="session-submit" type="submit" value="Sign Up" />
