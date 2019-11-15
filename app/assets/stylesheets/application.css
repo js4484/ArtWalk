@@ -106,6 +106,7 @@ h1, h5 {
   font-family: sans-serif;
   color: rgb(111, 114, 135);
   margin-bottom: 20px;
+  cursor: text;
 }
 
 .ib:hover {
@@ -143,7 +144,9 @@ h1, h5 {
 
 .input-text {
   font-size: 12px;
+  cursor: text;
 }
+
 
 .session-submit {
   background-color: #d1410c;
@@ -158,6 +161,7 @@ h1, h5 {
   height: 44px;
   font-size: 14px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .session-submit:hover {
@@ -195,6 +199,7 @@ h1, h5 {
   height: 44px;
   font-size: 14px;
   font-weight: 600;
+  cursor: pointer;
 }
 
  .login-input {
@@ -233,6 +238,7 @@ h1, h5 {
   font-family: sans-serif;
   color: rgb(111, 114, 135);
   margin: 0 5px 20px 5px;
+  cursor: text;
  }
 
 .input-names:hover {
