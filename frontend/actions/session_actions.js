@@ -6,8 +6,14 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 
+
 export const clearErrors = () => ({
     type: CLEAR_ERRORS
+});
+
+export const receiveCurrentEvent = currentEvent => ({
+    type: RECEIVE_CURRENT_EVENT,
+    currentEvent
 });
 
 export const receiveCurrentUser = currentUser => ({
@@ -23,6 +29,7 @@ export const receiveErrors = errors => ({
     type: RECEIVE_SESSION_ERRORS,
     errors
 });
+
 
 export const signup = user => dispatch => (
     APIUtil.signup(user).then(user => (
