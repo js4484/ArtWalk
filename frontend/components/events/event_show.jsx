@@ -3,16 +3,19 @@ import React from 'react';
 class EventShow extends React.Component {
     constructor(props) {
         super(props);
-        this.currentEvent = this.props.currentEvent;
+
     }
 
     componentDidMount() {
-        this.props.fetchEvent(this.props.match.params.id);
+        this.props.fetchEvent(this.props.match.params.eventId);
     }
 
     render() {
-        // debugger;
-    return (<div>Event Id: {this.currentEvent}</div>)
+        if (!this.props.currentEvent) {
+            return null
+        }
+        const id = `Event Id: ${this.props.currentEvent.id}`
+        return (<div>{id}</div>)
     }
     
 }

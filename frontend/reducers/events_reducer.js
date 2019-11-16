@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_EVENT } from '../actions/session_actions';
+import { RECEIVE_CURRENT_EVENT } from '../actions/event_actions';
 
 
 const eventsReducer = (state = {}, action) => {

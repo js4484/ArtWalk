@@ -29,7 +29,7 @@ const App = () => {
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             {/* <AuthRoute exact path="/events/index" component={EventsIndexContainer} /> */}
-            <AuthRoute exact path="/events/:id" component={EventShowContainer} />
+            <AuthRoute exact path="/events/:eventId" component={EventShowContainer} />
         </Switch>
     </div>
     )
