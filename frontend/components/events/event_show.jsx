@@ -36,11 +36,23 @@ class EventShow extends React.Component {
                     <div className="event-body-description-tags">Tags</div>
                     <div className="event-body-description-share">Share</div>
                 </div>
-                <div className="event-body-sidebar"></div>
-
+                <div className="event-body-sidebar">
+                    <div className="event-body-sidebar-details">
+                        <div className="event-body-sidebar-details-performers">Performers</div>
+                        <div className="event-body-sidebar-details-date">Date and Time</div>
+                        <div className="event-body-sidebar-details-location">Location</div>
+                        <div className="event-body-sidebar-details-refund">Refund Policy</div>
+                    </div>
+                </div>
             </div>
-        
-        
+            <div className="event-organizer-info"></div>
+            <div className="event-map-info">
+                <div className="event-map-map"></div>
+                <div className="event-map-footer">
+                    <div className="event-map-footer-details"></div>
+                    <div className="event-map-footer-icons"></div>
+                </div>
+            </div>
         </div>)
     }
     
