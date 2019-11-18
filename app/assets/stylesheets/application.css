@@ -310,3 +310,59 @@ h1, h5 {
 .login-signup a:hover {
   color: black;
 }
+
+.show-page {
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+}
+
+.event-container {
+  border: 2px solid white;
+  border-radius: 4px;
+  margin: 3% 0 0 0;
+  width: 92.5%;
+  display: flex;
+  flex-direction: column;
+}
+.event-header {
+  display: flex;
+}
+
+.event-header-image {
+  background-color: palegreen;
+  height: 360px;
+  width: 66.6%;
+}
+
+.event-header-details {
+  background-color: palevioletred;
+  height: 360px;
+  width: 33.3%;
+}
+
+.event-midbar {
+  background-color: white;
+  height: 66px;
+  width: 100%;
+}
+
+.event-body {
+  display: flex;
+}
+
+.event-body-description {
+  background-color: plum;
+  width: calc(66.6% - 50px);
+  height: 100%;
+  padding-left: 50px;
+  padding-top: 50px;
+}
+
+.event-body-sidebar {
+  background-color: powderblue;
+  width: calc(33.3% - 50px);
+  height: 100%;
+  padding-left: 50px;
+  padding-top: 50px;
+}

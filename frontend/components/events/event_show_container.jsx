@@ -5,7 +5,6 @@ import { fetchEvent } from '../../actions/event_actions';
 import EventShow from './event_show';
 
 const mapStateToProps = (state , ownProps) => {
-    debugger;
     return {
         currentUser: state.entities.users[state.session.id],
         currentEvent: state.entities.events[ownProps.match.params.eventId]
