@@ -36,10 +36,10 @@ class EventShow extends React.Component {
         let tagsToo = Object.keys(tags);
         let tagsOutput = [];
         tagsToo.forEach((tag, i) => {
-            tagsOutput.push(<div className="event-tag-container"><li key={i} className="event-tag">{tag}</li></div>)
+            tagsOutput.push(<div className="event-tag">{tag}</div>)
             
         })
-        return <ul>{tagsOutput}</ul>
+        return <div>{tagsOutput}</div>
     }
 
     parseTourguide() {
