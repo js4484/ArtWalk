@@ -333,18 +333,65 @@ h1, h5 {
   background-color: palegreen;
   height: 360px;
   width: 66.6%;
+  overflow: hidden;
+  text-align: center;
 }
 
 .event-header-details {
   background-color: palevioletred;
-  height: 360px;
-  width: 33.3%;
+  height: 320px;
+  width: calc(33.3% - 50px);
+  padding: 20px 0 20px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .event-midbar {
   background-color: white;
   height: 66px;
-  width: 100%;
+  width: calc(100%-30px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1% 0 20px;
+}
+.midbar-share-icon{
+  background-color: green;
+  height: 20px;
+  width: 20px;
+}
+
+.midbar-like-icon {
+  background-color: red;
+  height: 20px;
+  width: 20px;
+}
+
+.event-midbar-event-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-midbar-tickets {
+  border: 0px solid green;
+  border-radius: 4px;
+  background-color: green;
+  width: 32%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.event-midbar-tickets:hover {
+  filter: brightness(115%);
+}
+
+.event-midbar-tickets div {
+  color: white;
+
 }
 
 .event-body {
@@ -359,10 +406,44 @@ h1, h5 {
   padding-top: 50px;
 }
 
+.event-tag-container {
+}
+
+.event-tag {
+  border: 1px solid black;
+  border-radius: 15px;
+  list-style-type: none;
+  padding: 5px;
+  width: auto;
+
+}
+
 .event-body-sidebar {
   background-color: powderblue;
   width: calc(33.3% - 50px);
-  height: 100%;
   padding-left: 50px;
+  height: 100%;
   padding-top: 50px;
+}
+
+.sidebar-element {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-header-image img {
+  max-width:100%;
+}
+
+div span {
+  font-family: sans-serif;
+  font-size: 16px;
+  padding-bottom: 7px;
+}
+
+.side-detail {
+  font-family: sans-serif;
+  font-size: 15px;
+  padding-bottom: 20px;
+
 }
