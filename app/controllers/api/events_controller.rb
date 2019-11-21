@@ -1,7 +1,7 @@
 class Api::EventsController < ApplicationController
     
   def index
-    @events.show
+    @events = Event.all
     render "api/events/index"
   end
     

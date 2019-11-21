@@ -459,8 +459,11 @@ h1, h5 {
   flex-direction: column;
 }
 
-.event-header-image img {
-  max-width:100%;
+.event-header-image {
+  max-width: 100%;
+  max-height: 100%;
+  background-position: center;
+  background-size: cover;
 }
 
 div span {
@@ -473,10 +476,32 @@ div span {
   font-family: sans-serif;
   font-size: 15px;
   padding-bottom: 20px;
+}
 
+.event-index-container {
+  width: 850px;
+  height: 400px;
+  border: 1px solid fuchsia;
+  flex-wrap: wrap;
+}
+
+.event-index-item {
+  border: 1px solid blue;
+  height: 250px;
+  width: 280px;
+  padding: 16px;
+}
+
+.index-item-img {
+  width: 100px;
+  height: 100px;
 }
 
 .to-flex-column {
   display: flex;
   flex-direction: column;
+}
+
+.to-flex-row {
+  display: flex;
 }

@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_EVENT } from '../actions/event_actions';
+import { RECEIVE_CURRENT_EVENT, RECEIVE_EVENTS } from '../actions/event_actions';
 
 
 const eventsReducer = (state = {}, action) => {
@@ -6,6 +6,8 @@ const eventsReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_CURRENT_EVENT:
             return Object.assign({}, state, { [action.currentEvent.id]: action.currentEvent });
+        case RECEIVE_EVENTS:
+            return action.events;
         default:
             return state;
     }
