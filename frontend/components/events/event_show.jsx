@@ -1,4 +1,6 @@
 import React from 'react';
+import Modal from '../modal/modal.jsx';
+
 const monthHash = { "01": "JAN", "02": "FEB", "03": "MAR", "04": "APR", "05": "MAY", "06": "JUN", "07": "JUL", "08": "AUG", "09": "SEP", "10": "OCT", "11": "NOV", "12": "DEC" };
 const monthHash2 = { "01": "January", "02": "February", "03": "March", "04": "April", "05": "May", "06": "June", "07": "Juny", "08": "August", "09": "September", "10": "October", "11": "November", "12": "December" };
 
@@ -40,12 +42,18 @@ const refundHash = {
 class EventShow extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {loading: true, modalOpen: false};
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
 
     };
 
 
     componentDidMount() {
-        this.props.fetchEvent(this.props.match.params.eventId);
+
+        this.props.fetchEvent(this.props.match.params.eventId).then(() => {
+            this.setState({loading: false});
+        });
     }
 
     makeMidbarTickets() {
@@ -53,11 +61,20 @@ class EventShow extends React.Component {
         // debugger;
 
         if (this.props.currentEvent.tickets_sold < this.props.currentEvent.ticket_num) {
-            output = (<div className="event-midbar-tickets"><div>Tickets</div></div>)
+            output = (<div className="event-midbar-tickets" onClick={this.openModal}><div>Tickets</div></div>)
         } else {
             output = (<div className="event-midbar-tickets disabled"><div>Sold Out</div></div>)
         }
         return output;
+    }
+
+    openModal() {
+        console.log("clicked");
+        this.setState({modalOpen: true});
+    }
+
+    closeModal(){
+        this.setState({modalOpen: false});
     }
 
     parseDT() {
@@ -103,7 +120,7 @@ class EventShow extends React.Component {
 
     parseHeaderTitle() {
 
-        const name = `${this.props.currentEvent.organizer.first_name} ${this.props.currentEvent.organizer.last_name}`
+        const name = `${this.props.currentEvent.organizeFirstName} ${this.props.currentEvent.organizerLastName}`
         const title = this.props.currentEvent.event_title;
         return (<div className="eht-container">
                 <div className="eht-title">{title}</div>
@@ -141,16 +158,20 @@ class EventShow extends React.Component {
     parseTourguide() {
         // return console.log(this.props.currentEvent.organizer);
 
-        const name = `${this.props.currentEvent.organizer.first_name} ${this.props.currentEvent.organizer.last_name}`
+        const name = `${this.props.currentEvent.organizerFirstName} ${this.props.currentEvent.organizerLastName}`
         return (<div className="">{name}</div>)
     }
 
 
     render() {
-        if (!this.props.currentEvent) {
-            return null
+        // debugger;
+        if (this.state.loading) return null;
+
+        let modal;
+        if (this.state.modalOpen) {
+            // debugger;
+            modal = <Modal eventId={this.props.match.params.eventId} closeModal={this.closeModal}/>;
         }
-        
         const pTg = this.parseTourguide();
         const dt = `${this.props.currentEvent.start_time} - ${this.props.currentEvent.end_time}`
         // debugger;
@@ -211,6 +232,7 @@ class EventShow extends React.Component {
                     </div>
                 </div>
             </div>
+            {modal}
         </div>)
     }
     

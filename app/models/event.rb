@@ -7,6 +7,10 @@ class Event < ApplicationRecord
     
     has_many :tickets
 
+    has_many :attendees,
+        through: :tickets,
+        source: :user
+
 
     def tickets_sold
         self.tickets.count

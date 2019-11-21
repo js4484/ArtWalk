@@ -10,7 +10,14 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_many :tickets
-  has_many :events
+  has_many :attending_events,
+    through: :tickets,
+    source: :event
+
+  has_many :organized_events,
+      class_name: 'Event',
+      foreign_key: :organizer_id,
+      primary_key: :id
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

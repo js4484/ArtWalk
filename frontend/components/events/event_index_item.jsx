@@ -10,7 +10,9 @@ class EventIndexItem extends React.Component {
 
     handleClick() {
         const eventId = this.props.event.id;
+        // debugger;
         this.props.history.push(`/events/${eventId}`);
+
     }
 
     render() {

@@ -22,7 +22,7 @@ class EventIndex extends React.Component {
 
         // return <div>Index Page</div>
         
-
+        // debugger;
         return (<div>
             <h1>Events: </h1> 
             <div className="event-index-container to-flex-row">
@@ -30,6 +30,7 @@ class EventIndex extends React.Component {
                     <EventIndexItem
                         event={event}
                         key={event.id}
+                        history={this.props.history}
                     />
                 ))}
             </div>

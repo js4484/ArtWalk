@@ -25,14 +25,14 @@ class LoginForm extends React.Component {
     handleDemoUser(e) {
         e.preventDefault();
         const user = {email: "demo@user.com", password: "DemoUser"};
-        this.props.processForm(user);
+        this.props.processForm(user).then(this.props.history.push(`/events`));
     }
 
     handleSubmit(e) {
         
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then(this.props.history.push(`/events`));
     }
 
 
