@@ -32,6 +32,7 @@ const App = () => {
             {/* <AuthRoute exact path="/events/index" component={EventsIndexContainer} /> */}
             <Route exact path="/events/:eventId" component={EventShowContainer} />
             <Route exact path="/events" component={EventsIndexContainer} />
+            {/* <Route exact path="/" component={EventsIndexContainer} /> */}
         </Switch>
     </div>
     )
