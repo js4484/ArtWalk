@@ -53,6 +53,12 @@ class TicketForm extends React.Component {
 
     render() {
 
+        if (!this.props.currentUserId) {
+            return (<div className="ticket-form-container">
+                <div>Please Sign in to Reserve Tickets</div>
+            </div>)
+        }
+
         if (this.props.success.length > 0) {
             return(
                 <div className="ticket-form-container to-flex-column">
