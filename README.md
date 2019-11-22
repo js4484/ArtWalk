@@ -8,10 +8,12 @@ Welcome to ArtWalk, a single-page app that allows users to browse, and book tick
 
 
 The ticket interface acts as a layer of protection, only allowing users who are logged in to reserve tickets.
+If tickets for an event are sold out, the button will change and become inoperable
 
 ![loginticketform](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/pleasesignin.png)
 ![ticketform](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/ticketform.png)
 ![congrats](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/purchasedtickets.png)
+![soldout](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/soldout.png)
 
 
 Visitors to ArtWalk can log in, sign up, or use the demo user to explore the website fully
