@@ -36,7 +36,7 @@ const App = () => {
         </Switch>
     </div>
     )
-};git
+};
 
 
 export default App;
