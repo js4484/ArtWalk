@@ -17,7 +17,6 @@ class TicketForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger;
         let qty = this.state.qty;
         this.props.createTicket(this.props.currentEventId, this.props.currentUserId, qty);
 

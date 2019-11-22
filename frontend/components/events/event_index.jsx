@@ -14,15 +14,15 @@ class EventIndex extends React.Component {
 
 
     render() {
-        // debugger;
+
         if (Object.keys(this.props.events).length < 1) {
             return <div>Loading...</div>
         }
-        // debugger;
+
 
         // return <div>Index Page</div>
         
-        // debugger;
+
         return (<div className="show-page">
             <div className="event-index-container">
                 <h1>Tours in NYC</h1>

@@ -58,7 +58,6 @@ class EventShow extends React.Component {
 
     makeMidbarTickets() {
         let output;
-        // debugger;
 
         if (this.props.currentEvent.tickets_sold < this.props.currentEvent.ticket_num) {
             output = (<div className="event-midbar-tickets" onClick={this.openModal}><div>Tickets</div></div>)
@@ -69,7 +68,6 @@ class EventShow extends React.Component {
     }
 
     openModal() {
-        console.log("clicked");
         this.setState({modalOpen: true});
     }
 
@@ -79,7 +77,6 @@ class EventShow extends React.Component {
     }
 
     parseDT() {
-        // debugger;
 
         const startMonth = monthHash2[this.props.currentEvent.event_date.split('-')[1]];
         const endMonth = monthHash2[this.props.currentEvent.event_date.split('-')[1]];
@@ -103,13 +100,11 @@ class EventShow extends React.Component {
         if (!this.props.currentEvent.add_faqs) {
             return <div></div>
         } else {
-            // debugger;
             const faqs = this.props.currentEvent.faqs;
             let faqQs = Object.keys(faqs);
             let faqAs = Object.values(faqs);
             let output = [];
             faqQs.forEach((ele, i) => {
-                // debugger;
                 output.push(<div className="faq-douple to-flex-column">
                     <div className="faq-q">Q: {ele}</div>
                     <div className="faq-a">A: {faqAs[i]}</div>
@@ -142,8 +137,6 @@ class EventShow extends React.Component {
     }
 
     parseHeaderPrice() {
-        // debugger;
-        // console.log()
         let price = this.props.currentEvent.ticket_price;
         if (this.props.currentEvent.ticket_price === 0) {
             price = "FREE"
@@ -190,25 +183,20 @@ class EventShow extends React.Component {
     }
 
     parseTourguide() {
-        // return console.log(this.props.currentEvent.organizer);
-
         const name = `${this.props.currentEvent.organizerFirstName} ${this.props.currentEvent.organizerLastName}`
         return (<div className="">{name}</div>)
     }
 
 
     render() {
-        // debugger;
         if (this.state.loading) return null;
 
         let modal;
         if (this.state.modalOpen) {
-            // debugger;
             modal = <Modal eventId={this.props.match.params.eventId} closeModal={this.closeModal}/>;
         }
         const pTg = this.parseTourguide();
         const dt = `${this.props.currentEvent.start_time} - ${this.props.currentEvent.end_time}`
-        // debugger;
         return (<div className="show-page">
             <div className="event-container">
                 <div className="event-header">
