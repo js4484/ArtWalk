@@ -1,24 +1,46 @@
-# README
+# ArtWalk
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live Link](https://art-walk.herokuapp.com/#/)
 
-Things you may want to cover:
+Welcome to ArtWalk, a single-page app that allows users to browse, and book tickets for, art tours around New York City. Based on Eventbrite, the website is largely available to any viewer, but one must be logged in to make any substantive changes.
 
-* Ruby version
+![show-page](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/showpage.png)
 
-* System dependencies
 
-* Configuration
+The ticket interface acts as a layer of protection, only allowing users who are logged in to reserve tickets.
 
-* Database creation
+![loginticketform](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/pleasesignin.png)
+![ticketform](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/ticketform.png)
+![congrats](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/purchasedtickets.png)
 
-* Database initialization
 
-* How to run the test suite
+Visitors to ArtWalk can log in, sign up, or use the demo user to explore the website fully
 
-* Services (job queues, cache servers, search engines, etc.)
+![login](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/login.png)
+![signup](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/signup.png)
 
-* Deployment instructions
 
-* ...
+# Technologies Used
+1. Javascript
+2. Ruby on Rails
+3. PostgreSQL
+4. HTML
+5. SCSS/CSS
+
+# Libraries Used
+* React.js (incl. react-router-dom)
+* Redux (incl. react-redux, redux-thunk middleware)
+* Bcrypt for user authorization
+
+# Features
+* Sign up & log in with email & password
+* Browse art tours
+* Book tickets for art tours
+
+
+# Future Features
+* User Profile, where a user van view and remove tickets, as well as update their information
+* Users can favorite/bookmark Events 
+* Search Feature using tags; every event already has tags, saved as a true value for that tag in a hash
+
+![tags](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/tags.png)
