@@ -493,18 +493,22 @@ div span {
 }
 
 .index-item-img {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 66.666666%;
 }
 
-.to-flex-column {
-  display: flex;
-  flex-direction: column;
+.index-item-date {
+
 }
 
-.to-flex-row {
-  display: flex;
+.index-item-title {
+  
 }
+
+.index-item-location {
+
+}
+
 
 .modal-background {
   position: fixed;
@@ -521,4 +525,20 @@ div span {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.ticket-form-container {
+  height: 400px;
+  width: 400px;
+  background-color: white;
+}
+
+
+.to-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.to-flex-row {
+  display: flex;
 }

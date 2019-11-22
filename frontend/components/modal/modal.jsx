@@ -1,11 +1,13 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
+import TicketFormContainer from '../tickets/ticket_form_container';
 
-function Modal({ closeModal }) {
+function Modal({ closeModal, eventId }) {
 
-    // let component = <TicketFormContainer />;
-    let component = <div>TicketForm</div>
+    let component = <TicketFormContainer eventId={eventId} />;
+    // let component = <div>TicketForm</div>
+    // pass close modal into ticket
 
     return (
         <div className="modal-background" onClick={closeModal}>
@@ -24,7 +26,6 @@ function Modal({ closeModal }) {
 
 const mapDispatchToProps = dispatch => {
     return {
-        createTicket
 
     };
 };

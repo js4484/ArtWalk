@@ -2,12 +2,15 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 // import { fetchEvent } from '../../actions/event_actions';
 
-import EventShow from './event_show';
+import { createTicket } from '../../actions/ticket_actions'
+
+import TicketForm from './ticket_form';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        currentUser: state.entities.users[state.session.id],
-        currentEvent: state.entities.events[ownProps.match.params.eventId]
+        currentUserId: state.session.id,
+        currentEventId: ownProps.eventId,
+        success: state.ui.tickets
 
     };
 };
@@ -18,4 +21,4 @@ const mapDispatchToProps = dispatch => ({
 });
 
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EventShow));
+export default connect(mapStateToProps, mapDispatchToProps)(TicketForm);
