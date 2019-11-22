@@ -74,6 +74,7 @@ class EventShow extends React.Component {
     }
 
     closeModal(){
+        
         this.setState({modalOpen: false});
     }
 
@@ -98,6 +99,39 @@ class EventShow extends React.Component {
         )
     }
 
+    parseFAQs(){
+        if (!this.props.currentEvent.add_faqs) {
+            return <div></div>
+        } else {
+            // debugger;
+            const faqs = this.props.currentEvent.faqs;
+            let faqQs = Object.keys(faqs);
+            let faqAs = Object.values(faqs);
+            let output = [];
+            faqQs.forEach((ele, i) => {
+                // debugger;
+                output.push(<div className="faq-douple to-flex-column">
+                    <div className="faq-q">Q: {ele}</div>
+                    <div className="faq-a">A: {faqAs[i]}</div>
+                </div>)
+            })
+            return <div>FAQs: {output}</div>;
+        }
+
+
+        {
+            Object.values(this.props.events).map(event => (
+                <EventIndexItem
+                    event={event}
+                    key={event.id}
+                    history={this.props.history}
+                />
+            ))
+        }
+        
+
+    }
+
     parseHeaderDate() {
         return(
             <div className="ehd-container">
@@ -120,7 +154,7 @@ class EventShow extends React.Component {
 
     parseHeaderTitle() {
 
-        const name = `${this.props.currentEvent.organizeFirstName} ${this.props.currentEvent.organizerLastName}`
+        const name = `${this.props.currentEvent.organizerFirstName} ${this.props.currentEvent.organizerLastName}`
         const title = this.props.currentEvent.event_title;
         return (<div className="eht-container">
                 <div className="eht-title">{title}</div>
@@ -202,6 +236,9 @@ class EventShow extends React.Component {
                             <h4>About this event</h4>
                             <p>{this.props.currentEvent.event_description}</p>
                         </div>
+                        <div className="event-body-description-faq-container">
+                            {this.parseFAQs()}
+                        </div>
                         <div className="event-body-description-tags"><div>Tags:</div>
                             {this.parseTags()}</div>
                         <div className="event-body-description-share">Share</div>
@@ -209,7 +246,7 @@ class EventShow extends React.Component {
                     <div className="event-body-sidebar">
                         <div className="event-body-sidebar-details">
                             <div className="event-body-sidebar-details-tourguide sidebar-element"><span>Tourguide</span>
-                                <div className="side-detail"><a href="#">{pTg}</a></div>
+                                <div className="side-detail">{pTg}</div>
                             </div>
                             <div className="event-body-sidebar-details-date sidebar-element"><span>Date and Time</span>
                                 <div className="side-detail">{this.parseDT()}</div>

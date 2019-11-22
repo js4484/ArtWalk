@@ -16,16 +16,17 @@ class EventIndex extends React.Component {
     render() {
         // debugger;
         if (Object.keys(this.props.events).length < 1) {
-            return <div>no events</div>
+            return <div>Loading...</div>
         }
         // debugger;
 
         // return <div>Index Page</div>
         
         // debugger;
-        return (<div>
-            <h1>Events: </h1> 
-            <div className="event-index-container to-flex-row">
+        return (<div className="show-page">
+            <div className="event-index-container">
+                <h1>Tours in NYC</h1>
+                <div className="events-box to-flex-row">
                 {Object.values(this.props.events).map(event => (
                     <EventIndexItem
                         event={event}
@@ -33,6 +34,7 @@ class EventIndex extends React.Component {
                         history={this.props.history}
                     />
                 ))}
+                </div>
             </div>
         </div>)
     };

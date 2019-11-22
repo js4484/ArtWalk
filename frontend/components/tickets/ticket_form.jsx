@@ -62,13 +62,13 @@ class TicketForm extends React.Component {
             )
         }
 
-        return(<div className="ticket-form-container to-flex-column">
+        return(<div className="ticket-form-container">
 
-            <div className="ticket-button" onClick={this.processSubtractTicket}>-</div>
-            <div className="ticket-number">{this.processTicketNumber()}</div>
-                <div className="ticket-button" onClick={this.processAddTicket}>+</div>
+            <div className="ticket-button" onClick={this.processSubtractTicket}><div className="ticket-button-text">-</div></div>
+            <div className="ticket-button"><div className="ticket-button-text">{this.processTicketNumber()}</div></div>
+                <div className="ticket-button" onClick={this.processAddTicket}><div className="ticket-button-text">+</div></div>
             <form onSubmit={this.handleSubmit}>
-                <input type="submit" value="Submit" />
+                <input className="ticket-form-btn" type="submit" value="Submit" />
             </form>
             </div>)
     }

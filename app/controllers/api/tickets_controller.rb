@@ -7,7 +7,7 @@ class Api::TicketsController < ApplicationController
             @tickets << Ticket.new(event_id: params[:event_id], user_id: params[:userId])
         end
         @tickets.each(&:save!)
-        render json: ["Congradulations, your tickets have been purchased"]
+        render json: ["Congratulations, your tickets have been purchased"]
     end
     
 end

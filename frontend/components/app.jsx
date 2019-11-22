@@ -20,7 +20,7 @@ const App = () => {
 
     return (<div><div className="nav-header-container">
         <header className="nav-header">
-            <Link to="/" className="header-link">
+            <Link to="/events" className="header-link">
                 <span className="corner-logo">ArtWalk</span>
             </Link>
             <GreetingContainer />
