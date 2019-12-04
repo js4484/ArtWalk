@@ -98,7 +98,7 @@ class EventShow extends React.Component {
 
     parseFAQs(){
         if (!this.props.currentEvent.add_faqs) {
-            return <div></div>
+            return null
         } else {
             const faqs = this.props.currentEvent.faqs;
             let faqQs = Object.keys(faqs);
@@ -110,20 +110,9 @@ class EventShow extends React.Component {
                     <div className="faq-a">A: {faqAs[i]}</div>
                 </div>)
             })
-            return <div>FAQs: {output}</div>;
+            return <div><div className="faq-header">FAQs:</div> {output}</div>;
         }
 
-
-        {
-            Object.values(this.props.events).map(event => (
-                <EventIndexItem
-                    event={event}
-                    key={event.id}
-                    history={this.props.history}
-                />
-            ))
-        }
-        
 
     }
 
@@ -179,7 +168,7 @@ class EventShow extends React.Component {
             tagsOutput.push(<div className="event-tag">{tag}</div>)
             
         })
-        return <div>{tagsOutput}</div>
+        return <div className="tag-container">{tagsOutput}</div>
     }
 
     parseTourguide() {
@@ -221,9 +210,13 @@ class EventShow extends React.Component {
                     <div className="event-body-description">
                         <div className="event-body-description-title">{this.props.currentEvent.event_title}</div>
                         <div className="event-body-description-about">
-                            <h4>About this event</h4>
+                            <h4>About this event:</h4>
                             <p>{this.props.currentEvent.event_description}</p>
                         </div>
+                        <div className="meet-up-details">
+                            <h4>Meet Up Details:</h4>
+                                <p>{this.props.currentEvent.meet_up_details}</p>
+                            </div>
                         <div className="event-body-description-faq-container">
                             {this.parseFAQs()}
                         </div>
