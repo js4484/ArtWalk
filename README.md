@@ -1,6 +1,6 @@
 # ArtWalk
 
-[Live Link](https://art-walk.herokuapp.com/#/)
+[Walk This Way! (Click Me)](https://art-walk.herokuapp.com/#/)
 
 Welcome to ArtWalk, a single-page app that allows users to browse, and book tickets for, art tours around New York City. Based on Eventbrite, the website is largely available to any viewer, but one must be logged in to make any substantive changes.
 
