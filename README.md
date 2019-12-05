@@ -6,18 +6,63 @@ Welcome to ArtWalk, a single-page app that allows users to browse, and book tick
 
 <img src="https://i.ibb.co/kM9Tp9B/newindex.png" alt="newindex" border="0">
 
+## Features
+
+### Ticket Interface
+
 
 The ticket interface acts as a layer of protection, only allowing users who are logged in to reserve tickets.
 
 
 <img src="https://i.ibb.co/1rcqnvV/newshow.png" alt="newshow" border="0">
+
+```javascript
+    render() {
+        if (!this.props.currentUserId) {
+            return (<div className="ticket-form-container">
+                      <div>Please Sign in to Reserve Tickets</div>
+                </div>)}
+        if (this.props.success.length > 0) {
+            return(<div className="ticket-form-container to-flex-column">
+                    {this.renderSuccess()}
+                </div>)}
+
+        return(<div className="ticket-form-container">
+                <div className="ticket-button" onClick={this.processSubtractTicket}><div className="ticket-button-text">-</div></div>
+                <div className="ticket-button"><div className="ticket-button-text">{this.processTicketNumber()}</div></div>
+                <div className="ticket-button" onClick={this.processAddTicket}><div className="ticket-button-text">+</div></div>
+                <form onSubmit={this.handleSubmit}>
+                    <input className="ticket-form-btn" type="submit" value="Submit" />
+                </form>
+                </div>)}
+  ```
+
+
+
+.
 <img src="https://i.ibb.co/j55pgkW/newplease.png" alt="newplease" border="0">
 <img src="https://i.ibb.co/304510t/newtickets.png" alt="newtickets" border="0">
 <img src="https://i.ibb.co/gZXFQqb/newcongrats.png" alt="newcongrats" border="0">
 
 If tickets for an event are sold out, the button will change and become inoperable
 
+```javascript
+makeMidbarTickets() {
+        let output;
+
+        if (this.props.currentEvent.tickets_sold < this.props.currentEvent.ticket_num) {
+            output = (<div className="event-midbar-tickets" onClick={this.openModal}><div>Tickets</div></div>)
+        } else {
+            output = (<div className="event-midbar-tickets disabled"><div>Sold Out</div></div>)
+        }
+        return output;
+    }
+   ```
+
+ .
 <img src="https://i.ibb.co/VM7jt3p/newsold.png" alt="newsold" border="0">
+
+### User Authentication
 
 Visitors to ArtWalk can log in, sign up, or use the demo user to explore the website fully
 
