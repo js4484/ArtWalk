@@ -4,22 +4,25 @@
 
 Welcome to ArtWalk, a single-page app that allows users to browse, and book tickets for, art tours around New York City. Based on Eventbrite, the website is largely available to any viewer, but one must be logged in to make any substantive changes.
 
-![show-page](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/showpage.png)
+<img src="https://i.ibb.co/kM9Tp9B/newindex.png" alt="newindex" border="0">
 
 
 The ticket interface acts as a layer of protection, only allowing users who are logged in to reserve tickets.
+
+
+<img src="https://i.ibb.co/1rcqnvV/newshow.png" alt="newshow" border="0">
+<img src="https://i.ibb.co/j55pgkW/newplease.png" alt="newplease" border="0">
+<img src="https://i.ibb.co/304510t/newtickets.png" alt="newtickets" border="0">
+<img src="https://i.ibb.co/gZXFQqb/newcongrats.png" alt="newcongrats" border="0">
+
 If tickets for an event are sold out, the button will change and become inoperable
 
-![loginticketform](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/pleasesignin.png)
-![ticketform](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/ticketform.png)
-![congrats](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/purchasedtickets.png)
-![soldout](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/soldout.png)
-
+<img src="https://i.ibb.co/VM7jt3p/newsold.png" alt="newsold" border="0">
 
 Visitors to ArtWalk can log in, sign up, or use the demo user to explore the website fully
 
-![login](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/login.png)
-![signup](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/signup.png)
+<img src="https://i.ibb.co/1dfVWGx/newlogin.png" alt="newlogin" border="0">
+<img src="https://i.ibb.co/W3y06hb/newsignin.png" alt="newsignin" border="0">
 
 
 # Technologies Used
@@ -27,7 +30,7 @@ Visitors to ArtWalk can log in, sign up, or use the demo user to explore the web
 2. Ruby on Rails
 3. PostgreSQL
 4. HTML
-5. SCSS/CSS
+5. CSS
 
 # Libraries Used
 * React.js (incl. react-router-dom)
@@ -42,7 +45,10 @@ Visitors to ArtWalk can log in, sign up, or use the demo user to explore the web
 
 # Future Features
 * User Profile, where a user van view and remove tickets, as well as update their information
-* Users can favorite/bookmark Events 
+* Users can favorite/bookmark Events from the event show midbar
+
+<img src="https://i.ibb.co/xJ8xBcL/newheart.png" alt="newheart" border="0">
+
 * Search Feature using tags; every event already has tags, saved as a true value for that tag in a hash
 
-![tags](https://github.com/js4484/ArtWalk/blob/master/app/assets/images/tags.png)
+<img src="https://i.ibb.co/DkktBx2/newtags.png" alt="newtags" border="0">
