@@ -36,6 +36,7 @@ gem 'pry-rails'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'jquery-rails'
+gem 'font-awesome-rails'
 
 
 group :production do

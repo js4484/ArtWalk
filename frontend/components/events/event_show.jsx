@@ -189,7 +189,9 @@ class EventShow extends React.Component {
         return (<div className="show-page">
             <div className="event-container">
                 <div className="event-header">
+                    <div className="event-header-image-con">
                     <div className="event-header-image" style={{ backgroundImage: `url(${this.props.currentEvent.event_image})`}}></div>
+                    </div>
                     <div className="event-header-details">
                         <div className="event-header-date">{this.parseHeaderDate()}</div>
                         <div className="event-header-title">{this.parseHeaderTitle()}</div>
@@ -197,8 +199,7 @@ class EventShow extends React.Component {
                     </div>
                 </div>
                 <div className="event-midbar">
-                    <div className="event-midbar-share midbar-share-icon"></div>
-                    <div className="event-midbar-like midbar-like-icon"></div>
+                    <div className=" midbar-like-icon"><i className="far fa-heart"></i></div>
                     <div className="event-midbar-event-info">
                         <div>{this.props.currentEvent.event_title}</div>
                         <div>{this.props.currentEvent.event_date}</div>

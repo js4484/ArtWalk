@@ -12,7 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+
 
 
 body {
@@ -341,21 +343,12 @@ h1, h5 {
   display: flex;
 }
 
-.event-header-image {
 
-}
 
-.event-header-date {
-
-}
 
 .ehd-container {
   display: flex;
   flex-direction: column;
-}
-
-.event-header-title {
-
 }
 
 .eht-container {
@@ -392,9 +385,10 @@ h1, h5 {
 }
 
 .midbar-like-icon {
-  background-color: red;
-  height: 20px;
-  width: 20px;
+  /* background-color: red; */
+  font-size: 20px;
+  /* height: 20px;
+  width: 20px; */
 }
 
 .event-midbar-event-info {
@@ -444,6 +438,7 @@ h1, h5 {
   background-color: rgb(235, 235, 235);
   margin-right: 50px;
   padding: 20px;
+  margin-top: 10px;
 }
 
 .faq-q {
@@ -451,14 +446,17 @@ h1, h5 {
 }
 
 .faq-a {
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   border-bottom: 1px solid rgb(228, 199, 217);
 }
 
 .faq-header {
-  margin-bottom: 10px;
-  border-bottom: 1px solid rgb(228, 199, 217);
-  padding-bottom: 2px;
+  border-bottom: 2px solid rgb(228, 199, 217);
+  padding-bottom: 3px;
+}
+
+.faq-douple  {
+  padding-top: 10px;
 }
 
 .tag-container {
@@ -504,17 +502,25 @@ h1, h5 {
   flex-direction: column;
 }
 
+.event-header-image-con {
+  height: 360px;
+  width: 66.6%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .event-header-image {
   max-width: 100%;
   max-height: 100%;
-  background-position: center;
-  background-size: contain;
+  /* background-position: center; */
+  background-size: cover;
   background-repeat: no-repeat;
   background-color: rgb(72, 72, 72);
-  height: 360px;
-  width: 66.6%;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
-  text-align: center;
+  /* text-align: center; */
 }
 
 div span {
@@ -561,13 +567,22 @@ div span {
   border-radius: 4px;
 }
 
-.index-item-img {
+.index-item-img-con {
   width: 100%;
   height: 66.666666%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.index-item-img {
+  height: 100%;
+  width: 100%;
   max-width: 100%;
   max-height: 100%;
-  background-position: center;
-  background-size: contain;
+  /* background-position: center; */
+  background-size: cover;
   background-repeat: no-repeat;
   background-color: rgb(72, 72, 72);
   
