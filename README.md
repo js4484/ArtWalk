@@ -16,6 +16,8 @@ The ticket interface acts as a layer of protection, only allowing users who are 
 
 <img src="https://i.ibb.co/1rcqnvV/newshow.png" alt="newshow" border="0">
 
+If there is no current user, a basic informational modal will show. If the user has successfully submitted a form, a success message will show. Lastly, if there is a current user, and the event is not sold out (more on that below), the form to reserve tickets will show.
+
 ```javascript
     render() {
         if (!this.props.currentUserId) {
@@ -61,6 +63,27 @@ makeMidbarTickets() {
 
  .
 <img src="https://i.ibb.co/VM7jt3p/newsold.png" alt="newsold" border="0">
+
+The tickets_sold props comes from database relations, which is compared to the max tickets allowed for the specific event. Event.tickets_sold simply works through an association with tickets.
+
+```ruby
+
+class Event < ApplicationRecord
+    has_many :tickets
+
+    def tickets_sold
+        self.tickets.count
+    end
+ end
+
+class Ticket < ApplicationRecord
+
+    belongs_to :event,
+        class_name: 'Event',
+        foreign_key: :event_id,
+        primary_key: :id
+end
+```
 
 ### User Authentication
 
