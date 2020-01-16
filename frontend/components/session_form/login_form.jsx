@@ -54,7 +54,7 @@ class LoginForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div className="greeting-with-img">
                         <div className="lgs">Let's get Started</div>
-                        <div className="after-lgs">Use your email, or our demo user, to log in.</div>
+                        
                     </div>
                     {this.renderErrors()}
                     <div className="login-form">
@@ -68,8 +68,6 @@ class LoginForm extends React.Component {
                         </div>
 
                         <input className="session-submit" type="submit" value="Log In" />
-                        <a className="fp" href="#">Forgot password</a>
-                        <p className="or" >or</p>
                         <input className="demo-submit" type="submit" value="Log In As Demo User" onClick={this.handleDemoUser}/>
                     </div>
                 </form>
