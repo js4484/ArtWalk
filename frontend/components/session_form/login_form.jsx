@@ -66,9 +66,11 @@ class LoginForm extends React.Component {
                             <label htmlFor="input-password"><div className="input-text">Password:</div></label>
                             <input id="input-password" type="password" value={this.state.password} className="login-input" onChange={this.update("password")} />
                         </div>
-
-                        <input className="session-submit" type="submit" value="Log In" />
-                        <input className="demo-submit" type="submit" value="Log In As Demo User" onClick={this.handleDemoUser}/>
+                        <div className="linebr-set">
+                            <div className="linebr"></div>
+                        </div>
+                        <button className="session-submit">Log In</button>
+                        <button className="session-submit demo-sub" onClick={this.handleDemoUser}>Log In As Demo User</button>
                     </div>
                 </form>
             </div>

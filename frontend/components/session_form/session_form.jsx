@@ -71,6 +71,9 @@ class SessionForm extends React.Component {
                             <label htmlFor="input-password"><div className="input-text">Password:</div></label>
                             <input id="input-password" type="password" value={this.state.password} className="login-input" onChange={this.update("password")} />
                         </div>
+                        <div className="linebr-set">
+                            <div className="linebr"></div>
+                        </div>
                         <input className="session-submit" type="submit" value="Sign Up" />
                         <div className="password-strength">
                             <p className="after-lgs">Your password must be at least 6 characters</p>
