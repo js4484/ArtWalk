@@ -384,6 +384,8 @@ body {
 .show-page {
   background-color: #e4c7d9;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   border-radius: 4px;
 }
@@ -431,8 +433,17 @@ body {
   justify-content: space-between;
 }
 
+.event-midbar-container {
+  width: 100%;
+  position: sticky;
+  top: 0px;
+  /* height: 12vh; */
+  background-color: #E4C7D9;
+  z-index: 20;
+}
+
 .event-midbar {
-  background-color: rgba(255, 255, 255, 0.315);
+  background-color: #ECD9E5;
   box-shadow: inset 0 0 10px #000000;
   height: 10vh;
   width: calc(100%-30px);
@@ -444,8 +455,20 @@ body {
   top: 0px;
   border-radius: 6px;
   margin: 2% 0 2% 0;
+  z-index: 200;
+  /* margin-bottom: 2vh; */
   
 }
+
+/* .event-midbar::before {
+  content: " ";
+  width: 100%;
+  height: 2%;
+  background-color: #E4C7D9;
+  
+} */
+
+
 .midbar-share-icon{
   background-color: green;
   height: 20px;
@@ -521,6 +544,7 @@ body {
   display: flex;
   flex-direction: column;
   /* align-items: center; */
+  /* height: 20000px; */
 
 }
 
@@ -663,6 +687,44 @@ div span {
   padding-bottom: 20px;
 }
 
+.splash-img-con {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2% 0 2% 0;
+  background-color: #ECD9E5;
+  /* box-shadow: inset 0 0 10px #000000; */
+  box-shadow: inset 0 7px 9px -7px #000000;
+}
+
+
+
+.splash-img {
+  width: 100%;
+  height: 100%;
+  /* max-height: 1000%; */
+  margin: 5% 0 5% 0;
+  background-image: url('tester2.png');
+  background-repeat: no-repeat;
+
+    background-size: cover;
+    background-position: right;
+    position: relative;
+}
+
+.splash-img::after {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 -7px 9px -7px #000000;
+  position: absolute;
+  padding-bottom: 5%;
+
+}
+
 .event-index-container {
   
   /* height: 400px; */
@@ -674,7 +736,7 @@ div span {
   /* border: 4px solid  rgb(228, 199, 217); */
   border-radius: 4px;
   border-radius: 4px;
-  margin: 3% 0 3% 0;
+  margin: 0 0 3% 0;
   width: 920px;
   display: flex;
   flex-wrap: wrap;

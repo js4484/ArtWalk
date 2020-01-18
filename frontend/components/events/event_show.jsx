@@ -198,14 +198,16 @@ class EventShow extends React.Component {
                         <div className="event-header-title">{this.parseHeaderPrice()}</div>
                     </div>
                 </div>
-                <div className="event-midbar">
-                    <div className=" midbar-like-icon"><i className="far fa-heart"></i></div>
-                    <div className="event-midbar-event-info">
-                        <div>{this.props.currentEvent.event_title}</div>
-                        <div>{this.props.currentEvent.event_date}</div>
+                <div className="event-midbar-container">
+                    <div className="event-midbar">
+                        <div className=" midbar-like-icon"><i className="far fa-heart"></i></div>
+                        <div className="event-midbar-event-info">
+                            <div>{this.props.currentEvent.event_title}</div>
+                            <div>{this.props.currentEvent.event_date}</div>
+                        </div>
+                        <div className="event-midbar-ticket-price">{this.parseHeaderPrice()}</div>
+                        {this.makeMidbarTickets()}
                     </div>
-                    <div className="event-midbar-ticket-price">{this.parseHeaderPrice()}</div>
-                    {this.makeMidbarTickets()}
                 </div>
                 <div className="event-body">
                     <div className="event-body-description">

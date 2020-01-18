@@ -24,6 +24,10 @@ class EventIndex extends React.Component {
         
 
         return (<div className="show-page">
+            <div className="splash-img-con">
+                <div className="splash-img"></div>
+
+            </div>
             <div className="event-index-container">
                 <h1>Tours in NYC</h1>
                 <div className="events-box to-flex-row">
