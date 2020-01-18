@@ -110,7 +110,7 @@ class EventShow extends React.Component {
                     <div className="faq-a">A: {faqAs[i]}</div>
                 </div>)
             })
-            return <div><div className="faq-header">FAQs:</div> {output}</div>;
+            return <div className="faq-inner-con"><div className="faq-header">FAQs:</div> {output}</div>;
         }
 
 
