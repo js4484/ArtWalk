@@ -119,7 +119,7 @@ class EventShow extends React.Component {
     parseHeaderDate() {
         return(
             <div className="ehd-container">
-                <div className="ehd-month">{monthHash[this.props.currentEvent.event_date.split('-')[1]]}</div>
+                <div className="ehd-month">{monthHash[this.props.currentEvent.event_date.split('-')[1]]} </div>
                 <div className="ehd-day">{this.props.currentEvent.event_date.split('-')[2]}</div>
             </div>
         );
@@ -131,7 +131,7 @@ class EventShow extends React.Component {
             price = "FREE"
         }
 
-        return (`${price}`)
+        return (<div className="cost">{price}</div>)
     }
 
     parseHeaderTitle() {
@@ -140,7 +140,7 @@ class EventShow extends React.Component {
         const title = this.props.currentEvent.event_title;
         return (<div className="eht-container">
                 <div className="eht-title">{title}</div>
-                <div className="eht-organizer">{name}</div>
+                <div className="eht-organizer">Tour Guide: {name}</div>
             </div>
         )
     }
@@ -193,17 +193,19 @@ class EventShow extends React.Component {
                     <div className="event-header-image" style={{ backgroundImage: `url(${this.props.currentEvent.event_image})`}}></div>
                     </div>
                     <div className="event-header-details">
+                        {this.parseHeaderTitle()}
+                        <div className="event-header-price">Price:  {this.parseHeaderPrice()}</div>
                         <div className="event-header-date">{this.parseHeaderDate()}</div>
-                        <div className="event-header-title">{this.parseHeaderTitle()}</div>
-                        <div className="event-header-title">{this.parseHeaderPrice()}</div>
+                        
+                        
                     </div>
                 </div>
                 <div className="event-midbar-container">
                     <div className="event-midbar">
                         <div className=" midbar-like-icon"><i className="far fa-heart"></i></div>
                         <div className="event-midbar-event-info">
-                            <div>{this.props.currentEvent.event_title}</div>
-                            <div>{this.props.currentEvent.event_date}</div>
+                            <div className="mid-title">{this.props.currentEvent.event_title}</div>
+                            <div className="mid-date">{this.props.currentEvent.event_date}</div>
                         </div>
                         <div className="event-midbar-ticket-price">{this.parseHeaderPrice()}</div>
                         {this.makeMidbarTickets()}

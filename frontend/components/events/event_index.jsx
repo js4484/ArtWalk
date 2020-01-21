@@ -25,7 +25,14 @@ class EventIndex extends React.Component {
 
         return (<div className="show-page">
             <div className="splash-img-con">
-                <div className="splash-img"></div>
+                <div className="splash-img">
+                    <div className="image-box">
+                        <div className="image-box-text">
+                            These are super cool words about art and things
+                        </div>
+                    </div>
+                </div>
+                
 
             </div>
             <div className="event-index-container">
