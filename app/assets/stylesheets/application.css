@@ -50,7 +50,7 @@ h1, h5 {
 .nav-header {
   display: flex;
   justify-content: space-between;
-  height: 59px;
+  height: 10vh;
   width: 90%;
   align-items: center;
   /* margin-top: 3%; */
@@ -59,7 +59,8 @@ h1, h5 {
       /* margin-top: 3vh; */
   padding: 0 3% 0 3%;
   margin-left: 0;
-  background-color: rgba(255, 255, 255, 0.315);
+  /* background-color: rgba(255, 255, 255, 0.315); */
+  overflow: visible;
 
 }
 
@@ -270,10 +271,40 @@ body {
    margin-left: 20px;
  }
 
- .header-link {
-   text-decoration: none;
-   color: black;
+ .corner-logo {
+   background-image: url(awlogo2.png);
+  content: " ";
+  height: 9vh;
+  width: 9vh;
+  background-size: contain;
+  /* overflow: hidden; */
+  border-radius: 50%;
+  box-shadow: 0;
+  
+  position: relative;
+  transition: transform ease-in-out 300ms;
+  transition: box-shadow ease-in-out 200ms;
  }
+
+ .corner-logo:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 0px 0px 4px goldenrod;
+
+  
+ }
+
+ /* .corner-logo::before{
+   content: " ";
+  position: absolute;
+  height: 9vh;
+  width: 9vh;
+  border-radius: 50%;
+  top: 1vh;
+  left: 1vh;
+  background-color: gray;
+  z-index: -1;
+ } */
+
 
  hr {
    border-bottom: 1px solid grey;
@@ -359,9 +390,9 @@ body {
 
 .login-signup {
   display: flex;
-  height: 100%;
+  /* height: 100%; */
   align-items: center;
-  line-height: 4;
+  /* line-height: 4; */
 }
 
 .login-signup a {
@@ -370,11 +401,40 @@ body {
   text-decoration: none;
   color: #6f7287;
   padding: 0 10px 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .nav-link {
-  height: 100%;
+  /* height: 100%; */
+  /* justify-content: flex-end; */
+  position: relative;
+  font-family: 'Abel', sans-serif;
+  font-size: 26px;
+  /* height: 30px; */
+  overflow: visible;
+}
 
+.nav-link::after {
+  position: absolute;
+  content: " ";
+  height: 10px;
+  width: 0%;
+  background-color: goldenrod;
+  display: block;
+  /* transform: scale(1, 1); */
+  /* transition: transform ease-out 250ms; */
+  transition: width ease-in-out 500ms;
+  left: 0;
+  right: 100%;
+  
+}
+
+.nav-link:hover::after {
+  transform: scale(1, 1);
+  width: 100%;
+  
 }
 
 .login-signup a:hover {
@@ -403,7 +463,7 @@ body {
 }
 .event-header {
 
-  height: 50vh;
+  height: 80vh;
   
   display: flex;
   justify-content: space-between;
@@ -413,6 +473,7 @@ body {
 
   width: 100%;
   box-sizing: border-box;
+  /* margin: 2% 0 2% 0; */
   
   
 }
@@ -603,10 +664,7 @@ body {
   padding-bottom: 10px;
 }
 
-.faq-a {
-  /* padding-bottom: 10px;
-  border-bottom: 1px solid rgb(228, 199, 217); */
-}
+
 
 .faq-header {
   /* border-bottom: 2px solid rgb(228, 199, 217); */
@@ -745,7 +803,22 @@ body {
   border-radius: 6px;
   /* text-align: center; */
   /* margin: 2% 0 2% 2%; */
-  /* position: relative; */
+  position: relative;
+}
+
+.event-header-image::after {
+  content: " ";
+  background-image: url(goldframe.png);
+  position: absolute;
+  /* background-size: unset; */
+  height: 80vh;
+  width: 61vw;
+  top: -3vh;
+  left: -2vh;
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: 61vw 80vh;
+  overflow: visible;
 }
 
 /* .event-header-image::before {
@@ -1150,4 +1223,15 @@ h1:hover::after {
 
 .input-text {
   color: #ECD9E5;
+}
+
+button {
+  background-color: transparent;
+  color: none;
+  border: 0;
+  color: gray;
+}
+
+button:hover {
+  color: black;
 }

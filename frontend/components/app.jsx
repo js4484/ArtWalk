@@ -21,7 +21,7 @@ const App = () => {
     return (<div><div className="nav-header-container">
         <header className="nav-header">
             <Link to="/events" className="header-link">
-                <span className="corner-logo">ArtWalk</span>
+                <div className="corner-logo"></div>
             </Link>
             <GreetingContainer />
         </header>
