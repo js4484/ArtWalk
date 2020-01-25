@@ -190,7 +190,7 @@ class EventShow extends React.Component {
             <div className="event-container">
                 <div className="event-header">
                     <div className="event-header-image-con">
-                    <div className="event-header-image" style={{ backgroundImage: `url(${this.props.currentEvent.event_image})`}}></div>
+                    <div className="event-header-image" style={{ backgroundImage: `image-url(${this.props.currentEvent.event_image})`}}></div>
                     </div>
                     <div className="event-header-details">
                         {this.parseHeaderTitle()}

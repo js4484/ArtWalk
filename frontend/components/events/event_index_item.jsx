@@ -22,7 +22,7 @@ class EventIndexItem extends React.Component {
                 onClick={this.handleClick}
             >
                 <div className="index-item-img-con">
-                    <div className="index-item-img" style={{ backgroundImage: `url(${event_image})` }}></div>
+                    <div className="index-item-img" style={{ backgroundImage: `image-url(${event_image})` }}></div>
                 </div>
                 <div className="index-item-text to-flex-column">
                     <div className="index-item-date">{event_date}</div>
