@@ -272,7 +272,7 @@ body {
  }
 
  .corner-logo {
-   background-image: image-url(awlogo2.png);
+   background: image-url(awlogo2.png);
   content: " ";
   height: 9vh;
   width: 9vh;
@@ -793,7 +793,7 @@ transition: transform ease-in-out 300ms;
 
 /* .event-header-image-con::before {
   content: " ";
-  background-image: image-url(frame.png);
+  background: image-url(frame.png);
   position: absolute;
   background-size: cover;
   height: 390px;
@@ -824,7 +824,7 @@ transition: transform ease-in-out 300ms;
 
 .event-header-image::after {
   content: " ";
-  background-image: image-url(goldframe.png);
+  background: image-url(goldframe.png);
   position: absolute;
   /* background-size: unset; */
   height: 80vh;
@@ -839,7 +839,7 @@ transition: transform ease-in-out 300ms;
 
 /* .event-header-image::before {
   content: " ";
-  background-image: image-url(leftcorner.png);
+  background: image-url(leftcorner.png);
   position: absolute;
   height: 45vh;
   max-height: 360px;
@@ -851,7 +851,7 @@ transition: transform ease-in-out 300ms;
 
 /* .event-header-image::after {
   content: " ";
-  background-image: image-url(rightcorner.png);
+  background: image-url(rightcorner.png);
   position: absolute;
   max-height: 360px;
   height: 45vh;
@@ -895,7 +895,7 @@ div span {
   height: 100%;
   /* max-height: 1000%; */
   margin: 5% 0 5% 0;
-  background-image: image-url('big3.jpg');
+  background: image-url('big3.jpg');
   background-repeat: no-repeat;
 
     background-size: cover;
