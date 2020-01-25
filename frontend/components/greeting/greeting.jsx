@@ -24,7 +24,7 @@ const Greeting = ({ currentUser, logout, pathname }) => {
     const personalGreeting = () => (
         <hgroup className="header-group">
             {/* <h2 className="header-name">Hi, {currentUser.email}!</h2> */}
-            <button className="logout-btn" onClick={logout}>Log Out</button>
+            <button className="nav-link" onClick={logout}>Log Out</button>
         </hgroup>
     );
 
