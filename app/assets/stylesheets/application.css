@@ -131,13 +131,15 @@ body {
   font-size: 38px;
   font-weight: 700;
   margin: 0 0 0 0;
-  text-shadow: 4px 4px 28px rgb(0, 0, 0);
+  
+  text-shadow: 4px 4px 20px rgb(0, 0, 0);
 }
 
 .after-lgs {
   font-family: sans-serif;
   font-size: 14px;
   color: #6f7287;
+  transform: scale(0);
 }
 
 .input-box {
@@ -148,21 +150,21 @@ body {
   background-color: transparent;
   padding: 5px;
   border-radius: 4px;
-  border: 3px solid rgb(29, 29, 128);
+  border: 3px solid goldenrod;
   font-family: sans-serif;
   color: rgb(111, 114, 135);
   margin-bottom: 20px;
   cursor: text;
-  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.536);
-  background-color: rgba(29, 29, 128, 0.452);
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.536);
+  background-color: rgba(218, 165, 32, 0.144);
 }
 
 .ib:hover {
-    border: 3px solid rgb(98, 98, 230);
+    border: 3px solid rgb(29, 29, 128);
 }
 
 .ib:focus-within {
-  border: 3px solid rgb(98, 98, 230);
+  border: 3px solid rgb(29, 29, 128);
 }
 
 .input-box input[type="text"] {
@@ -198,13 +200,13 @@ body {
 
 .session-submit {
   /* background-color: #d1410c; */
-  background-color: rgb(29, 29, 128);
-  color: #ffffff;
+  background-color: goldenrod;
+  color: white;
   display: block;
   box-sizing: border-box;
   width: calc(80% + 6px);
   padding: 0 30px 1px;
-  border: 3px solid rgb(29, 29, 128);
+  border: 3px solid goldenrod;
   padding: 5px;
   border-radius: 4px;
   padding: 6px;
@@ -212,16 +214,17 @@ body {
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.536);
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.536);
   margin: 6px 0 6px 0;
 }
 
 .session-submit:hover {
-    background-color: rgb(98, 98, 230);
+    /* background-color: rgb(98, 98, 230); */
     /* box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0); */
-    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.76);
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.536);
     margin-left: 2px;
     margin: 10px 0 2px 0;
+    color: #ECD9E5;
 }
 
 .fp {
@@ -319,7 +322,8 @@ body {
    /* width: 320px;
    margin-right: 10px; */
    display: flex;
-   justify-content: center;
+   justify-content: space-between;
+   width: calc(80% + 16px);
    
  }
 
@@ -327,8 +331,8 @@ body {
   display: flex;
 
   flex-direction: column;
-  width: 28%;
-  border: 3px solid rgb(29, 29, 128);
+  width: 43%;
+  border: 3px solid goldenrod;
   height: 36px;
   background-color: transparent;
   padding: 5px;
@@ -336,19 +340,18 @@ body {
   /* border: 1px solid rgb(98, 98, 230); */
   font-family: sans-serif;
   color: white;
-  margin: 0 5px 20px 5px;
+  margin: 0 0px 20px 0px;
   cursor: text;
-  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.536);
-  /* background-color: #d1410c53; */
-  background-color: rgba(159, 34, 249, 0.308);
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.536);
+  background-color: rgba(218, 165, 32, 0.144);
  }
 
 .input-names:hover {
-  border: 3px solid #043C3B;
+  border: 3px solid rgb(29, 29, 128);
 }
 
 .input-names:focus-within {
-  border: 3px solid #043C3B;
+  border: 3px solid rgb(29, 29, 128);
 }
 
 .input-names input[type="text"] {
@@ -462,6 +465,7 @@ transition: transform ease-in-out 300ms;
   align-items: center;
   justify-content: center;
   border-radius: 4px;
+  overflow: hidden;
 }
 
 .event-container {
@@ -551,14 +555,30 @@ transition: transform ease-in-out 300ms;
 
 .event-midbar-container {
   width: 100%;
-  position: sticky;
-  top: 0px;
+  
   /* height: 12vh; */
   background-color: #E4C7D9;
-  z-index: 20;
+  z-index: 2;
+  position: sticky;
+  top: 0;
+}
+
+/* figure out sticky ticket bar, maybe react class change? */
+
+.event-midbar::after {
+  position: absolute;
+  display: block;
+  content: " ";
+  background: #ECD9E5;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: 0;
+  right: -90%;
 }
 
 .event-midbar {
+  z-index: 1;
   background-color: #ECD9E5;
   /* box-shadow: inset 0 0 10px #000000; */
   height: 10vh;
@@ -567,7 +587,7 @@ transition: transform ease-in-out 300ms;
   justify-content: space-between;
   align-items: center;
   padding: 1% 2% 1% 2%;
-  position: sticky;
+  position: relative;
   top: 0px;
   border-radius: 6px;
   margin: 2% 0 2% 0;
@@ -576,13 +596,19 @@ transition: transform ease-in-out 300ms;
   
 }
 
-/* .event-midbar::before {
+.event-midbar::before {
+  position: absolute;
+  display: block;
   content: " ";
+  background: #ECD9E5;
+  z-index: 0;
+  height: 100%;
   width: 100%;
-  height: 2%;
-  background-color: #E4C7D9;
+  top: 0;
+  z-index: 0;
+  right: 90%;
   
-} */
+}
 
 
 .midbar-share-icon{
@@ -624,6 +650,7 @@ transition: transform ease-in-out 300ms;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 
 }
 
@@ -638,7 +665,7 @@ transition: transform ease-in-out 300ms;
 
 .event-body {
   display: flex;
-  height: 100%;
+  height: 1000px;
   border-radius: 6px;
   
 }
@@ -753,8 +780,13 @@ transition: transform ease-in-out 300ms;
   margin-right: 20px;
   margin-top: 10px;
   background-color: rgb(235, 235, 235);
-  box-shadow: 0 0 8px 0px black ;
+  /* box-shadow: 0 0 8px 0px black ; */
 
+}
+
+.event-tag:hover {
+  cursor: pointer;
+  background-color: rgba(150, 150, 150, 0.509);
 }
 
 .event-body-sidebar {
@@ -894,7 +926,7 @@ div span {
   width: 100%;
   height: 100%;
   /* max-height: 1000%; */
-  margin: 5% 0 5% 0;
+  margin: 3% 0 3% 0;
   background-image: url('big3.jpg');
   background-repeat: no-repeat;
 
@@ -946,10 +978,9 @@ div span {
   /* box-shadow: inset 0 0 10px #000000; */
 
   background-color: rgba(255, 255, 255, 0.315);
-  padding-bottom: 20px;
   /* border: 4px solid  rgb(228, 199, 217); */
   /* border-radius: 4px; */
-  padding: 5% 0 5% 0;
+  padding: 3% 0 3% 0;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1193,7 +1224,7 @@ div span {
 }
 
 .lgs {
-font-family: 'Paytone One', sans-serif;
+  font-family: 'Abel', sans-serif;
 }
 
 .demo-sub {
@@ -1218,7 +1249,7 @@ font-family: 'Paytone One', sans-serif;
   width: 100%;
   border-radius: 4px;
   background-color: #e4c7d9;
-  box-shadow: 1px 1px 8px rgb(0, 0, 0);
+  /* box-shadow: 1px 1px 8px rgb(0, 0, 0); */
   /* max-width: 300px; */
   
 }
@@ -1248,7 +1279,7 @@ h1:hover::after {
 }
 
 .input-text {
-  color: #ECD9E5;
+  color: rgba(128, 128, 128, 0.721);
 }
 
 button {
