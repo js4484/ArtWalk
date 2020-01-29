@@ -28,8 +28,9 @@ class EventIndex extends React.Component {
                 <div className="splash-img">
                     <div className="image-box">
                         <div className="image-box-text">
-                            These are super cool words about art and things
+                            I mean, making art is about objectifying your experience of the world, transforming the flow of moments into something visual, or textual, or musical, whatever. Art creates a kind of commentary.
                         </div>
+                        <div className="artist-name">-- Barbara Kruger</div>
                     </div>
                 </div>
             </div>
