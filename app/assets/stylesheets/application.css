@@ -1329,3 +1329,31 @@ button {
 button:hover {
   color: black;
 }
+
+/* userShowPage */
+
+.user-show-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+
+.ticket-con {
+  display: flex;
+  justify-content: space-between;
+
+
+  width: 80%;
+  height: 10vh;
+  margin: 2vh 0 2vh 0;
+}
+
+
+.ticket-image {
+  height: 100%;
+  width: 10vh;
+  background-size: cover;
+}
