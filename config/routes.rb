@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :create]
     resource :session, only: [:create, :destroy, :show]
     resources :events, only: [:show, :index] do
-      resources :tickets, only: [:create]
+      resources :tickets, only: [:create, :destory]
     end
   end
   # root "static_pages#root"

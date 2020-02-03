@@ -10,4 +10,12 @@ class Api::TicketsController < ApplicationController
         render json: ["Congratulations, your tickets have been purchased"]
     end
     
+    def destroy
+
+        @ticket = Ticket.find(params[:id])
+        if @ticket
+            @ticket.destroy 
+            render "/events"
+        end
+    end
 end

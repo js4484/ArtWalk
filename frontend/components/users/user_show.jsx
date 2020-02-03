@@ -9,23 +9,53 @@ class UserShow extends React.Component {
     this.currentUser = this.props.currentUser;
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.displayTickets = this.displayTickets.bind(this)
+    this.displayTickets = this.displayTickets.bind(this);
+    this.deleteTicket = this.deleteTicket.bind(this);
   };
 
 
   componentDidMount() {
+    
 
     this.props.fetchUser(this.props.match.params.userId).then(() => {
+      console.log(this.props.currentUser);
       this.setState({ loading: false });
     });
+
+  }
+
+  deleteTicket(e) {
+    let eventId = parseInt(e.target.id);   
+    // console.log(this.currentUser.tickets[0].event_id);
+    // console.log(parseInt(e.target.id));  
+    e.preventDefault();
+    
+    let ticketIDs = [];
+    this.currentUser.tickets.forEach((uT) => {
+      // console.log(uT);
+      if (uT.event_id === eventId) {
+        // console.log(uT);
+        console.log("match");
+        ticketIDs.push(uT.id);
+        
+      }
+    });
+    console.log(ticketIDs);
+ 
+    
+    this.deleteTicket(ticketIDs[0]).then(this.props.history.push(`/events`));
+
+
   }
 
   displayTickets() {
     console.log(this.props.currentUser);
     let output = [];
     this.props.currentUser.attending_events.forEach((object, index) => {
+      // console.log(object);
       output.push(<div key={index} className="ticket-con">
-        <div className="ticket-image" style={{ backgroundImage: `url(${object.event_image})` }}></div>
+        <div className="ticket-image" style={{ backgroundImage: `url(${object.event_image})` }}
+          onClick={() => this.props.history.push(`/events/${object.id}`)}></div>
         <div className="ticket-douple">
           <div className="ticket-name">
             {object.event_title}
@@ -37,7 +67,7 @@ class UserShow extends React.Component {
             {object.start_time}
           </div>
         </div>
-        <i className="far fa-trash-alt"></i>
+        <i id={object.id} onClick={this.deleteTicket} className="far fa-trash-alt ticket-delete-button"></i>
       </div>)
     });
     return output;

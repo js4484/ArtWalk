@@ -9,6 +9,8 @@ class Ticket < ApplicationRecord
         class_name: 'Event',
         foreign_key: :event_id,
         primary_key: :id
+
+
     
 
 end

@@ -14,3 +14,14 @@ export const createTicket = (eventId, currentUserId, qty) => dispatch => {
          dispatch(receiveTicket(ticket))
     })
 };
+
+export const DELETE_TICKET = 'DELETE_TICKET';
+
+export const deleteTicket = (id) => dispatch => (
+    APIUtil.deleteTicket(id).then(ticket => dispatch(removeTicket(ticket)))
+);
+
+export const removeTicket = payload => ({
+    type: DELETE_TICKET,
+    payload
+})

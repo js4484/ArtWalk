@@ -5,3 +5,11 @@ export const createTicket = (eventId, userId, qty) => (
         data: {userId: userId, qty: qty}
     })
 );
+
+export const deleteTicket = (ticketId) => (
+    $.ajax({
+        method: 'DELETE',
+        url: `/api/tickets/${ticketId}`
+    })
+);
+

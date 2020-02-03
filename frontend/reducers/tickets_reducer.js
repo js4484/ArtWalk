@@ -1,4 +1,4 @@
-import { CREATE_TICKET } from '../actions/ticket_actions';
+import { CREATE_TICKET, DELETE_TICKET } from '../actions/ticket_actions';
 
 
 const ticketsReducer = (state = [], action) => {
@@ -6,6 +6,10 @@ const ticketsReducer = (state = [], action) => {
     switch (action.type) {
         case CREATE_TICKET:
             return action.ticket;
+        case DELETE_TICKET:
+            newState = Object.assign({}, state);
+            delete newState[action.payload.ticket.id]
+            return newState;
         default:
             return state;
     }
