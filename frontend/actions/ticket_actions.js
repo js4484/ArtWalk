@@ -21,7 +21,7 @@ export const deleteTicket = (id) => dispatch => (
     APIUtil.deleteTicket(id).then(ticket => dispatch(removeTicket(ticket)))
 );
 
-export const removeTicket = payload => ({
+export const removeTicket = ticket => ({
     type: DELETE_TICKET,
-    payload
+    ticket
 })

@@ -1359,22 +1359,27 @@ button:hover {
   background-size: cover;
   border-radius: 4px;
   position: relative;
+  z-index: 1;
+  transform-style: preserve-3d;
 }
 
 .ticket-image::after{
   content: " ";
-  background-image: url('smallframe.png');
-  position: absolute;
+  background-image: url('sframe2.png');
+  
   /* background-size: unset; */
-  height: 11vh;
-  width: 11vh;
-  top: -.5vh;
-  left: -.5vh;
+  height: 12vh;
+  width: 12vh;
+  top: -1vh;
+  left: -.9vh;
   background-position: center;
   background-repeat: no-repeat; 
   background-size: contain;
   /* background-size: 10vw 10vh; */
   overflow: visible;
+  position: absolute;
+  z-index: -1;
+  transform: translateZ(-1px);
 }
 
 .ticket-image:hover {

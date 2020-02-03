@@ -25,9 +25,13 @@ class UserShow extends React.Component {
   }
 
   deleteTicket(e) {
-    let eventId = parseInt(e.target.id);   
-    // console.log(this.currentUser.tickets[0].event_id);
-    // console.log(parseInt(e.target.id));  
+    console.log(e.target.id);
+    console.log(parseInt(e.target.id));  
+    let save = e.target;
+    
+    let eventId = parseInt(save.id);   
+    console.log(this.currentUser.tickets[0].event_id);
+    
     e.preventDefault();
     
     let ticketIDs = [];
@@ -41,15 +45,12 @@ class UserShow extends React.Component {
       }
     });
     console.log(ticketIDs);
- 
-    
-    this.deleteTicket(ticketIDs[0]).then(this.props.history.push(`/events`));
-
-
+    // return eventId;
+    this.props.deleteTicket(ticketIDs[0]).then(this.props.history.push(`/events`));
   }
 
   displayTickets() {
-    console.log(this.props.currentUser);
+    // console.log(this.props.currentUser);
     let output = [];
     this.props.currentUser.attending_events.forEach((object, index) => {
       // console.log(object);

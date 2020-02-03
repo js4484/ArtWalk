@@ -15,7 +15,7 @@ class Api::TicketsController < ApplicationController
         @ticket = Ticket.find(params[:id])
         if @ticket
             @ticket.destroy 
-            render "/events"
+            render "api/events/index"
         end
     end
 end
