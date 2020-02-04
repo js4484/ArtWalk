@@ -418,6 +418,7 @@ body {
   position: relative;
   font-family: 'Abel', sans-serif;
   font-size: 26px;
+  cursor: pointer;
   /* height: 30px; */
   overflow: visible;
   background-color: #ECD9E5;
@@ -425,7 +426,7 @@ body {
   padding: 1vh 1vw 1vh 1vw;
   border-radius: 4px;
   box-shadow: 0;
-transition: transform ease-in-out 300ms;
+  transition: transform ease-in-out 300ms;
   transition: box-shadow ease-in-out 250ms;
 }
 
@@ -535,21 +536,24 @@ transition: transform ease-in-out 300ms;
 
 .cost {
   padding-left: 1vw;
+  cursor: default;
 }
 
 .event-header-details {
-  height: 90%;
+  height: 60%;
+  max-height: 70%;
   width: 28.333%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-end;
   border-radius: 6px;
-  padding: 1% 2% 0% 0%;
+  padding: 1% 2% 0% 2%;
   background-color: #ECD9E5;
-  margin-top: 2%;
+  margin-top: 5%;
+  cursor: default;
 
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 
 }
 
@@ -561,6 +565,7 @@ transition: transform ease-in-out 300ms;
   z-index: 2;
   position: sticky;
   top: 0;
+  margin-bottom: 3%;
 }
 
 /* figure out sticky ticket bar, maybe react class change? */
@@ -606,7 +611,7 @@ transition: transform ease-in-out 300ms;
   width: 100%;
   top: 0;
   z-index: 0;
-  right: 90%;
+  right: 100%;
   
 }
 
@@ -628,16 +633,21 @@ transition: transform ease-in-out 300ms;
   display: flex;
   flex-direction: column;
   font-family: 'Open Sans', sans-serif;
+  margin-left: 5%;
+  cursor: default;
 }
 
 .mid-title {
   font-size: 24px;
   font-family: 'ZCOOL QingKe HuangYou', cursive;
+  /* margin-left: 5%; */
 }
 
 .mid-date {
   /* padding-left: 2vw; */
   font-size: 14px;
+  text-indent: 6%;
+  margin-top: 1%;
 }
 
 .event-midbar-tickets {
@@ -651,11 +661,21 @@ transition: transform ease-in-out 300ms;
   align-items: center;
   justify-content: center;
   z-index: 2;
-
+  cursor: pointer;
+  font-size: 24px;
 }
 
 .event-midbar-tickets:hover {
   filter: brightness(115%);
+  transform: scale(1.1);
+  transition: transform ease-in-out 200ms;
+}
+
+.event-midbar-tickets:hover div {
+  /* font-weight: 600; */
+  font-size: 28px;
+  transition: font-size ease-in-out 50ms;
+  /* transition: font-weight ease-in-out 200ms; */
 }
 
 .event-midbar-tickets div {
@@ -1334,12 +1354,17 @@ button:hover {
 
 .user-show-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding-top: 3vh;
 
 }
+
+
 
 .ticket-con {
   display: flex;
@@ -1347,15 +1372,23 @@ button:hover {
   align-items: center;
 
 
-  width: 80%;
+  width: 38%;
   height: 10vh;
-  margin: 3vh 0 3vh 0;
+  margin: 1vh 0 1vh 0;
+  border: 4px solid #ECD9E5;
+  border-radius: 6px;
+  padding: 5vh 2vh 5vh 3vh;
+  margin-left: 2%;
 }
+
+/* .ticket-con:nth-of-type(2){
+  margin-left: 2%;
+} */
 
 
 .ticket-image {
-  height: 100%;
-  width: 10vh;
+  height: 13vh;
+  width: 13vh;
   background-size: cover;
   border-radius: 4px;
   position: relative;
@@ -1363,13 +1396,18 @@ button:hover {
   transform-style: preserve-3d;
 }
 
+.ticket-image:hover{
+  transform: scale(1.1);
+  transition: transform ease-in-out 200ms;
+}
+
 .ticket-image::after{
   content: " ";
   background-image: url('sframe2.png');
   
   /* background-size: unset; */
-  height: 12vh;
-  width: 12vh;
+  height: 15vh;
+  width: 15vh;
   top: -1vh;
   left: -.9vh;
   background-position: center;
@@ -1378,14 +1416,62 @@ button:hover {
   /* background-size: 10vw 10vh; */
   overflow: visible;
   position: absolute;
+  border-radius: 4px;
   z-index: -1;
   transform: translateZ(-1px);
+}
+
+.ticket-douple {
+  width: 60%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Abel', sans-serif;
+}
+
+.ticket-name {
+  overflow: scroll;
+  white-space: nowrap;
+  font-family: 'Abel', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.ticket-name:hover {
+  cursor: ew-resize;
 }
 
 .ticket-image:hover {
   cursor: pointer;
 }
 
+.ticket-date {
+  margin: 1vh 0 1vh 0;
+  text-indent: 10%;
+}
+
+.ticket-date:hover {
+  cursor: default;
+} 
+
+.start-time {
+  text-indent: 10%;
+}
+
+.start-time:hover {
+  cursor: default;
+}
+
+.ticket-delete-button {
+  font-size: 32px;
+  color: #633953;
+}
+
 .ticket-delete-button:hover {
   cursor: pointer;
+  color: #d2001f;
+  transform: scale(1.1);
+  transition: transform ease-in-out 200ms;
 }
+
+

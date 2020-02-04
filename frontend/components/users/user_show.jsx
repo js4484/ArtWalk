@@ -64,7 +64,7 @@ class UserShow extends React.Component {
             {object.event_date}
           </div>
           <div className="start-time">
-            {object.start_time}
+            {object.start_time} EST
           </div>
         </div>
         <i id={object.id} onClick={this.deleteTicket} className="far fa-trash-alt ticket-delete-button"></i>
@@ -95,8 +95,6 @@ class UserShow extends React.Component {
     
     return (
     <div className="show-page user-show-container">
-      User Show Page
-      Tickets:
       {this.displayTickets()}
     </div>
     )

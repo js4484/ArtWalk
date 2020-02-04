@@ -202,7 +202,7 @@ class EventShow extends React.Component {
                 </div>
                 <div className="event-midbar-container">
                     <div className="event-midbar">
-                        <div className=" midbar-like-icon"><i className="far fa-heart"></i></div>
+                        {/* <div className=" midbar-like-icon"><i className="far fa-heart"></i></div> */}
                         <div className="event-midbar-event-info">
                             <div className="mid-title">{this.props.currentEvent.event_title}</div>
                             <div className="mid-date">{this.props.currentEvent.event_date}</div>
