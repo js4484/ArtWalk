@@ -15,7 +15,8 @@ class Api::TicketsController < ApplicationController
         @ticket = Ticket.find(params[:id])
         if @ticket
             @ticket.destroy 
-            render "api/events/index"
+            @user = current_user
+            render 'api/users/show'
         end
     end
 end

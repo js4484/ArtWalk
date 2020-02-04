@@ -44,7 +44,6 @@ class UserShow extends React.Component {
         
       }
     });
-    console.log(ticketIDs);
     // return eventId;
     this.props.deleteTicket(ticketIDs[0]).then(this.props.history.push(`/events`));
   }
@@ -85,6 +84,7 @@ class UserShow extends React.Component {
 
 
   render() {
+    console.log(this.currentUser);
 
     if (this.state.loading) return (<div>Loading</div>);
 

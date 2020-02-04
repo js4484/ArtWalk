@@ -1,5 +1,6 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_USER } from '../actions/user_actions';
+import { DELETE_TICKET } from '../actions/ticket_actions';
 
 
 const usersReducer = (state = {}, action) => {
@@ -11,6 +12,9 @@ const usersReducer = (state = {}, action) => {
             console.log(action.payload);
             let user = action.payload;
             return Object.assign({}, state, { [user.id]: action.payload });
+        case DELETE_TICKET:
+            let user2 = action.ticket;
+            return Object.assign({}, state, { [user2.id]: action.ticket });
         default:
             return state;
     }
