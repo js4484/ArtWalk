@@ -6,6 +6,18 @@ Welcome to ArtWalk, a single-page app that allows users to browse, and book tick
 
 <img src="https://i.ibb.co/kM9Tp9B/newindex.png" alt="newindex" border="0">
 
+# Technologies Used
+1. Javascript
+2. Ruby on Rails
+3. PostgreSQL
+4. HTML
+5. CSS
+
+# Libraries Used
+* React.js (incl. react-router-dom)
+* Redux (incl. react-redux, redux-thunk middleware)
+* Bcrypt for user authorization
+
 ## Features
 
 ### Ticket Interface
@@ -91,32 +103,3 @@ Visitors to ArtWalk can log in, sign up, or use the demo user to explore the web
 
 <img src="https://i.ibb.co/1dfVWGx/newlogin.png" alt="newlogin" border="0">
 <img src="https://i.ibb.co/W3y06hb/newsignin.png" alt="newsignin" border="0">
-
-
-# Technologies Used
-1. Javascript
-2. Ruby on Rails
-3. PostgreSQL
-4. HTML
-5. CSS
-
-# Libraries Used
-* React.js (incl. react-router-dom)
-* Redux (incl. react-redux, redux-thunk middleware)
-* Bcrypt for user authorization
-
-# Features
-* Sign up & log in with email & password
-* Browse art tours
-* Book tickets for art tours
-
-
-# Future Features
-* User Profile, where a user van view and remove tickets, as well as update their information
-* Users can favorite/bookmark Events from the event show midbar
-
-<img src="https://i.ibb.co/xJ8xBcL/newheart.png" alt="newheart" border="0">
-
-* Search Feature using tags; every event already has tags, saved as a true value for that tag in a hash
-
-<img src="https://i.ibb.co/DkktBx2/newtags.png" alt="newtags" border="0">
