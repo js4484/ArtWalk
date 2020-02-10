@@ -34,7 +34,7 @@ class EventIndex extends React.Component {
                     </div>
                 </div>
             </div>
-            <div className="text-banner">Find Art Tours in NYC!</div>
+            {/* <div className="text-banner">Find Art Tours in NYC!</div> */}
             <div className="event-index-container">
                 {/* <h1>Tours in NYC</h1> */}
                 <div className="events-box to-flex-row">

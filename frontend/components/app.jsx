@@ -14,6 +14,7 @@ import LogInFormContainer from './session_form/login_form_container';
 import EventShowContainer from './events/event_show_container';
 import EventsIndexContainer from './events/events_index_container';
 import UserShowContainer from './users/user_show_container';
+// import EventNewContainer from './users/event_new_container';
 // import SearchContainer from './search/search_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -33,6 +34,7 @@ const App = () => {
             {/* <AuthRoute exact path="/events/index" component={EventsIndexContainer} /> */}
             <Route exact path="/events/:eventId" component={EventShowContainer} />
             <Route exact path="/users/:userId" component={UserShowContainer} />
+            {/* <Route exact path="/events/new" component={EventNewContainer} /> */}
             <Route exact path="/events" component={EventsIndexContainer} />
             <Route exact path="/" component={EventsIndexContainer} />
         </Switch>

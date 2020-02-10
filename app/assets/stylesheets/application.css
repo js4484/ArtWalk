@@ -50,6 +50,7 @@ h1, h5 {
 .nav-header {
   display: flex;
   justify-content: space-between;
+  align-content: center;
   height: 10vh;
   width: 90%;
   align-items: center;
@@ -69,8 +70,17 @@ h1, h5 {
   background-color: #e4c7d9;
   display: flex;
   justify-content: center;
-
 }
+
+.header-group {
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+}
+
+
+
+
 
 .index-image {
   max-height: 200px;
@@ -420,6 +430,7 @@ body {
   position: relative;
   font-family: 'Abel', sans-serif;
   font-size: 26px;
+  
   cursor: pointer;
   /* height: 30px; */
   overflow: visible;
@@ -435,6 +446,17 @@ body {
 .nav-link:hover {
   transform: scale(1.2);
   box-shadow: 0px 0px 0px 4px #633953;
+}
+
+.fa-user {
+  color: gray;
+  /* font-size: 4rem; */
+  /* height: 100%; */
+  padding: 1.2vh 1vw 1.2vh 1vw;
+  
+}
+.fa-user:hover {
+  color: black;
 }
 
 /* .nav-link::after {
@@ -565,9 +587,10 @@ body {
   /* height: 12vh; */
   background-color: #E4C7D9;
   z-index: 2;
-  position: sticky;
-  top: 0;
+  /* position: sticky; */
+  /* top: 0; */
   margin-bottom: 3%;
+  margin-top: 3%;
 }
 
 /* figure out sticky ticket bar, maybe react class change? */
@@ -1036,7 +1059,7 @@ div span {
   /* border: 1px solid rgb(255, 255, 255); */
   /* box-shadow: inset 0 0 10px #000000; */
 
-  background-color: rgba(255, 255, 255, 0.315);
+  /* background-color: rgba(255, 255, 255, 0.315); */
   /* border: 4px solid  rgb(228, 199, 217); */
   /* border-radius: 4px; */
   padding: 3% 0 3% 0;
@@ -1050,19 +1073,20 @@ div span {
 }
 
 .events-box {
-  width: 60%;
+  width: 80%;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .event-index-item {
   height: 230px;
   width: 230px;
   padding: 10px;
-  margin: 2%;
-  background-color:  rgb(228, 199, 217);
+  margin: 2% 2% 5% 2%;
+  /* background-color:  rgb(228, 199, 217); */
+  background-color: #ECD9E5;
   border-radius: 4px;
 
   /* box-shadow: 0 0 8px black; */
@@ -1070,6 +1094,8 @@ div span {
 .event-index-item:hover {
   cursor: pointer;
   animation: raise 300ms ease-in-out 0s 1 forwards;
+  transform: scale(1.1);
+  transition: transform ease-in-out 300ms;
 }
 
 @keyframes  raise {
@@ -1139,7 +1165,8 @@ div span {
 }
 
 .index-item-text {
-  background:  rgb(228, 199, 217);
+  /* background:  rgb(228, 199, 217); */
+  background-color: #ECD9E5;
   overflow: hidden;
   margin-top: 10px;
   margin-left: 5%;
@@ -1156,8 +1183,11 @@ div span {
   white-space: nowrap;
   margin-top: 5px;
   /* text-overflow: ellipsis; */
-  
 }
+
+/* .index-item-title:hover {
+  cursor: ew-resize;
+} */
 
 
 ::-webkit-scrollbar {
@@ -1376,7 +1406,7 @@ button:hover {
 
   width: 38%;
   height: 10vh;
-  margin: 1vh 0 1vh 0;
+  margin: 1vh 0 3vh 0;
   border: 4px solid #ECD9E5;
   border-radius: 6px;
   padding: 5vh 2vh 5vh 3vh;
@@ -1518,4 +1548,8 @@ footer {
   transform: scale(1.08);
   transition: transform ease-in-out 300ms;
   color: #633953;
+}
+
+a:visited {
+  outline: none;
 }

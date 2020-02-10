@@ -21,12 +21,17 @@ const Greeting = ({ currentUser, logout, pathname }) => {
             </nav>)
         };
     };
-    const personalGreeting = () => (
-        <hgroup className="header-group">
-            {/* <h2 className="header-name">Hi, {currentUser.email}!</h2> */}
+    
+    const personalGreeting = () => {
+        // let id = toString(currentuser.id);
+        let link = "/users/2";
+
+        return (<hgroup className="header-group">
+            {/* <h2 className="header-name">Hi, {currentUser.id}!</h2> */}
+            <Link to={link}><i className="far nav-link fa-user"></i></Link>
             <button className="nav-link" onClick={logout}>Log Out</button>
-        </hgroup>
-    );
+        </hgroup>)
+    };
 
     return currentUser ? personalGreeting() : sessionLinks();
 };

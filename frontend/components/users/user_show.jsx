@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from '../modal/modal.jsx';
-
+import { Route, NavLink, Redirect, Link, Switch } from 'react-router-dom';
 
 class UserShow extends React.Component {
   constructor(props) {
