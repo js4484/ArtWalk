@@ -13,3 +13,9 @@ export const deleteTicket = (ticketId) => (
     })
 );
 
+export const fetchTickets = () => (
+    $.ajax({
+        method: 'GET',
+        url: `api/tickets`
+    })
+);

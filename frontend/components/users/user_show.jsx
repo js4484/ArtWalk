@@ -1,86 +1,67 @@
 import React from 'react';
-import Modal from '../modal/modal.jsx';
+
 import { Route, NavLink, Redirect, Link, Switch } from 'react-router-dom';
 
 class UserShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { loading: true, modalOpen: false };
+    this.state = { loading: true, modalOpen: false, tickets: []};
     this.currentUser = this.props.currentUser;
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-    this.displayTickets = this.displayTickets.bind(this);
-    this.deleteTicket = this.deleteTicket.bind(this);
+
+   
+    this.displayTickets2 = this.displayTickets2.bind(this);
+    this.deleteTicket2 = this.deleteTicket2.bind(this);
   };
 
 
   componentDidMount() {
     
 
-    this.props.fetchUser(this.props.match.params.userId).then(() => {
-      console.log(this.props.currentUser);
-      this.setState({ loading: false });
+    this.props.fetchTickets().then((tickets) => {
+      console.log(tickets);
+      // this.setState({ loading: false });
+      this.setState({ loading: false, tickets: tickets.tickets })
     });
+    // this.setState({ loading: false, tickets: this.props.tickets})
 
   }
 
-  deleteTicket(e) {
-    console.log(e.target.id);
-    console.log(parseInt(e.target.id));  
-    let save = e.target;
+  // componentDidUpdate() {
+  //   this.setState({ tickets: this.props.tickets })
+  // }
+  
+
+  deleteTicket2(e) {
     
-    let eventId = parseInt(save.id);   
-    console.log(this.currentUser.tickets[0].event_id);
-    
-    e.preventDefault();
-    
-    let ticketIDs = [];
-    this.currentUser.tickets.forEach((uT) => {
-      // console.log(uT);
-      if (uT.event_id === eventId) {
-        // console.log(uT);
-        console.log("match");
-        ticketIDs.push(uT.id);
-        
-      }
-    });
-    // return eventId;
-    this.props.deleteTicket(ticketIDs[0]).then(this.props.history.push(`/events`));
+    this.props.deleteTicket(e.target.id);
   }
 
-  displayTickets() {
+
+  displayTickets2() {
     // console.log(this.props.currentUser);
     let output = [];
-    this.props.currentUser.attending_events.forEach((object, index) => {
+    this.state.tickets.forEach((ticket, index) => {
       // console.log(object);
-      output.push(<div key={index} className="ticket-con">
-        <div className="ticket-image" style={{ backgroundImage: `url(${object.event_image})` }}
-          onClick={() => this.props.history.push(`/events/${object.id}`)}></div>
+      output.push(<div key={ticket.id} className="ticket-con">
+        <div className="ticket-image" 
+          onClick={() => this.props.history.push(`/events/${ticket.event_id}`)}> ticket image</div>
         <div className="ticket-douple">
           <div className="ticket-name">
-            {object.event_title}
+            {ticket.id}
           </div>
           <div className="ticket-date">
-            {object.event_date}
+            {ticket.event_id}
           </div>
           <div className="start-time">
-            {object.start_time} EST
+            {ticket.event_id} EST
           </div>
         </div>
-        <i id={object.id} onClick={this.deleteTicket} className="far fa-trash-alt ticket-delete-button"></i>
+        <i id={ticket.id} onClick={this.deleteTicket2} className="far fa-trash-alt ticket-delete-button"></i>
       </div>)
     });
     return output;
-  }
+  };
 
-  openModal() {
-    this.setState({ modalOpen: true });
-  }
-
-  closeModal() {
-
-    this.setState({ modalOpen: false });
-  }
 
 
   render() {
@@ -88,14 +69,12 @@ class UserShow extends React.Component {
 
     if (this.state.loading) return (<div>Loading</div>);
 
-    // let modal;
-    // if (this.state.modalOpen) {
-    //   modal = <Modal eventId={this.props.match.params.eventId} closeModal={this.closeModal} />;
-    // }
+
     
     return (
     <div className="show-page user-show-container">
-      {this.displayTickets()}
+      {/* {this.displayTickets()} */}
+        {this.displayTickets2()}
     </div>
     )
   }

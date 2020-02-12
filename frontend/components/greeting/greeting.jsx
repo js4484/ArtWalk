@@ -23,12 +23,11 @@ const Greeting = ({ currentUser, logout, pathname }) => {
     };
     
     const personalGreeting = () => {
-        // let id = toString(currentuser.id);
-        let link = "/users/2";
+        let id = currentUser.id;
 
         return (<hgroup className="header-group">
             {/* <h2 className="header-name">Hi, {currentUser.id}!</h2> */}
-            <Link to={link}><i className="far nav-link fa-user"></i></Link>
+            <Link to={`/users/${id}`}><i className="far nav-link fa-user"></i></Link>
             <button className="nav-link" onClick={logout}>Log Out</button>
         </hgroup>)
     };

@@ -9,14 +9,19 @@ class Api::TicketsController < ApplicationController
         @tickets.each(&:save!)
         render json: ["Congratulations, your tickets have been purchased"]
     end
+
+   def index
+        @tickets = Ticket.all.select{|ticket| ticket.user_id == current_user.id}
+        render 'api/tickets/index'
+    
+   end 
     
     def destroy
 
         @ticket = Ticket.find(params[:id])
         if @ticket
             @ticket.destroy 
-            @user = current_user
-            render 'api/users/show'
+            render 'api/tickets/index'
         end
     end
 end

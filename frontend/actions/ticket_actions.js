@@ -18,10 +18,28 @@ export const createTicket = (eventId, currentUserId, qty) => dispatch => {
 export const DELETE_TICKET = 'DELETE_TICKET';
 
 export const deleteTicket = (id) => dispatch => (
-    APIUtil.deleteTicket(id).then(ticket => dispatch(removeTicket(ticket)))
+    APIUtil.deleteTicket(id).then(ticket => dispatch(removeTicket(id)))
 );
 
-export const removeTicket = ticket => ({
+export const removeTicket = ticket => (
+    
+    {
     type: DELETE_TICKET,
     ticket
 })
+
+export const RECEIVE_TICKETS = "RECEIVE_TICKETS";
+
+const receiveTickets = tickets => {
+    return {
+        type: RECEIVE_TICKETS,
+        tickets
+    };
+};
+
+
+
+export const fetchTickets = () => dispatch => {
+    return APIUtil.fetchTickets()
+        .then(tickets => dispatch(receiveTickets(tickets)));
+};
