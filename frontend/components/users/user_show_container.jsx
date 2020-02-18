@@ -9,7 +9,7 @@ import UserShow from './user_show';
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.entities.users[state.session.id],
-    tickets: state.entities.tickets,
+    tickets: Object.values(state.entities.tickets),
 
 
   };

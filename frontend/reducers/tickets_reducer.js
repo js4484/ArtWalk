@@ -9,6 +9,7 @@ const ticketsReducer = (state = [], action) => {
     switch (action.type) {
 
         case RECEIVE_TICKETS:
+            // debugger;
             let tState = Object.assign({}, state);
             action.tickets.forEach(ticket => {   tState[ticket.id] = ticket  })
 
@@ -18,7 +19,8 @@ const ticketsReducer = (state = [], action) => {
             return action.ticket;
         case DELETE_TICKET:
             let newState = Object.assign({}, state);
-            let num = parseInt(action.ticket);
+            debugger;
+            let num = parseInt(action.id);
             delete newState[num];
             return newState;
         case LOGOUT_CURRENT_USER:
