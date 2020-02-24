@@ -18,7 +18,7 @@ export const createTicket = (eventId, currentUserId, qty) => dispatch => {
 export const DELETE_TICKET = 'DELETE_TICKET';
 
 export const deleteTicket = (id) => dispatch => (
-    APIUtil.deleteTicket(id).then(id => dispatch(removeTicket(id)))
+    APIUtil.deleteTicket(id).then(() => dispatch(removeTicket(id)))
 );
 
 export const removeTicket = id => (
